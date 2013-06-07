@@ -1,6 +1,6 @@
 [user]
-    name = asonas
-    email = hzw1258@gmail.com
+    name = jigsaw
+    email = jigsaw@live.jp 
 [core]
     excludesfile = ~/.gitignore
 
@@ -11,13 +11,14 @@
     dfc = diff --cached
     co = checkout
     last = show -1 HEAD --stat -p
-    me = log --author=asonas
+    me = log --author=jigsaw
     ci = commit
     bull = pull
     dfw = diff --color-words
     b = branch
     log = log --decorate
     l = log --decorate
+    fix = commit --amend
 
 [color]
     ui = true

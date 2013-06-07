@@ -1,9 +1,2 @@
 .DS_Store
-*~
-miserarenaiyo/*
-*.swp
-*.swo
-*.swn
-.vim/bundle
-.bash_profile
-
+*.log
