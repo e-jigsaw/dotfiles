@@ -1,25 +1,37 @@
-export PATH=$PATH:~/.rvm/bin:/usr/local/sbin
 export PATH=~/local/bin:$PATH
-export PATH=$PATH:~/.nave/src/0.4.6/build/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/bin:$PATH
+export PATH=/bin:$PATH
+export PATH=${HOME}/.cabal/bin:$PATH
 
-alias rgu='rvm gemset use'
-alias g="git"
-alias bw="cd ~/Dropbox/Apps/Byword/"
-
+alias g='git'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -laG'
 alias vi='vim'
 alias red='git'
 alias via='vim **/*'
-alias r='rails'
-alias rgl='rvm gemset list'
+alias n='node'
+alias h='heroku'
+alias sb='open -a Sublime\ Text\ 2'
+alias gr='grunt'
 
 export GIT_EDITOR=vim
+
+alias kitlogin='ssh -l 'b0122502' dhcpa.cis.kit.ac.jp'
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 if [ -f $HOME/dotfiles/.git-completion.bash ]; then
     . $HOME/dotfiles/git-prompt.sh
 fi
+source .git-completion.bash
 
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w$(__git_ps1) \n\[\033[01;34m\]\$\[\033[00m\] '
+
+source ~/.nvm/nvm.sh
+npm_dir=${NVM_PATH}_modules
+export NODE_PATH=$npm_dir
+nvm use 0.8.19
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
