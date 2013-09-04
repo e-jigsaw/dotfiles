@@ -9,8 +9,6 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -laG'
 alias vi='vim'
-alias red='git'
-alias via='vim **/*'
 alias n='node'
 alias h='heroku'
 alias sb='open -a Sublime\ Text\ 2'
@@ -20,18 +18,16 @@ export GIT_EDITOR=vim
 
 alias kitlogin='ssh -l 'b0122502' dhcpa.cis.kit.ac.jp'
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 if [ -f $HOME/dotfiles/.git-completion.bash ]; then
     . $HOME/dotfiles/git-prompt.sh
+    . $HOME/dotfiles/.git-completion.bash
 fi
-source .git-completion.bash
 
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w$(__git_ps1) \n\[\033[01;34m\]\$\[\033[00m\] '
 
 source ~/.nvm/nvm.sh
 npm_dir=${NVM_PATH}_modules
 export NODE_PATH=$npm_dir
-nvm use 0.8.19
+nvm use default
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

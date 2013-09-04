@@ -5,15 +5,15 @@
     excludesfile = ~/.gitignore
 
 [alias]
-    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+    gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
     st = status
     df = diff
     dfc = diff --cached
+    dfs = diff --staged
     co = checkout
     last = show -1 HEAD --stat -p
     me = log --author=jigsaw
     ci = commit
-    bull = pull
     dfw = diff --color-words
     b = branch
     log = log --decorate
@@ -23,4 +23,3 @@
 [color]
     ui = true
     diff = true
-
