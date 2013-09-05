@@ -59,3 +59,6 @@ setopt auto_menu
 
 # http://mimosa-pudica.net/zsh-incremental.html
 source ${HOME}/dotfiles/incr*.zsh
+
+# https://github.com/zsh-users/zsh-syntax-highlighting
+source ${HOME}/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
