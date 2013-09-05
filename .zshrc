@@ -56,3 +56,6 @@ setopt hist_reduce_blanks
 autoload -Uz compinit
 compinit
 setopt auto_menu
+
+# http://mimosa-pudica.net/zsh-incremental.html
+source ${HOME}/dotfiles/incr*.zsh
