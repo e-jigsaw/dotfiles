@@ -41,7 +41,7 @@ export NODE_PATH=$npm_dir
 nvm use default
 
 # rvm
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 # history
 HISTFILE=~/.zsh_history
