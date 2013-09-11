@@ -19,6 +19,8 @@
     log = log --decorate
     l = log --decorate
     fix = commit --amend
+    pl = pull
+    ps = push
 
 [color]
     ui = true
