@@ -24,6 +24,9 @@ export GIT_EDITOR=vim
 PROMPT="%F{green}%B%n@%m%b%f %F{yellow}%~ %1(v|%1v|)%f
 %F{blue}%#%f "
 
+# display
+zstyle ':completion:*' list-separator '-->'
+
 # alias
 alias g='git'
 alias ls='ls -G'
