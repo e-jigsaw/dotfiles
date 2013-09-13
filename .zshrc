@@ -57,6 +57,11 @@ autoload -Uz compinit
 compinit
 setopt auto_menu
 
+# util
+function cd() {
+	builtin cd $@ && ls -a;
+}
+
 # http://mimosa-pudica.net/zsh-incremental.html
 source ${HOME}/dotfiles/incr*.zsh
 
