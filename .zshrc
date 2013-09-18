@@ -34,6 +34,7 @@ alias la='ls -laG'
 alias n='node'
 alias h='heroku'
 alias sb='open -a Sublime\ Text\ 2'
+alias mou='open -a Mou'
 alias gr='grunt'
 alias kitlogin='ssh -l 'b0122502' dhcpa.cis.kit.ac.jp'
 
