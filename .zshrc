@@ -1,9 +1,5 @@
 # export path
-export PATH=~/local/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/bin:$PATH
-export PATH=/bin:$PATH
-export PATH=${HOME}/.cabal/bin:$PATH
+# export PATH=~/.cabal/bin:$PATH
 
 # color
 autoload -Uz colors
