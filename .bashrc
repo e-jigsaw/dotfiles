@@ -25,9 +25,11 @@ fi
 
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w$(__git_ps1) \n\[\033[01;34m\]\$\[\033[00m\] '
 
-source ~/.nvm/nvm.sh
-npm_dir=${NVM_PATH}_modules
-export NODE_PATH=$npm_dir
-nvm use default
+if [ -f $HOME/.nvm/nvm.sh ];then
+	source ~/.nvm/nvm.sh
+	npm_dir=${NVM_PATH}_modules
+	export NODE_PATH=$npm_dir
+	nvm use default
+fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
