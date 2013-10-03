@@ -43,4 +43,10 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+" # Coffeescript
+" ## syntax
+source $HOME/dotfiles/vim-coffee-script/syntax/coffee.vim
+
+" ## indent
+source $HOME/dotfiles/vim-coffee-script/indent/coffee.vim
 
