@@ -1,6 +1,7 @@
 set nocompatible
 
 set runtimepath+=~/.vim/bundle/vim-coffee-script
+set runtimepath+=~/.vim/bundle/nerdtree
 
 " # 検索
 " ## 大文字小文字を区別しない, 大文字小文字が両方含まれている場合は区別する
