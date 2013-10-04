@@ -1,4 +1,6 @@
-set nocompatible 
+set nocompatible
+
+set runtimepath+=~/.vim/bundle/vim-coffee-script
 
 " # 検索
 " ## 大文字小文字を区別しない, 大文字小文字が両方含まれている場合は区別する
@@ -42,11 +44,3 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-
-" # Coffeescript
-" ## syntax
-source $HOME/dotfiles/vim-coffee-script/syntax/coffee.vim
-
-" ## indent
-source $HOME/dotfiles/vim-coffee-script/indent/coffee.vim
-
