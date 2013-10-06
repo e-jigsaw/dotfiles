@@ -1,5 +1,6 @@
 set nocompatible
 
+" # bundle 下のモジュール読み込み
 set runtimepath+=~/.vim/bundle/vim-coffee-script
 set runtimepath+=~/.vim/bundle/nerdtree
 
@@ -45,3 +46,7 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
+" # キーバインド
+" ## NERDTree
+nnoremap <C-t> :NERDTreeToggle<Enter>
