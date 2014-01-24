@@ -15,4 +15,4 @@
 	url = https://github.com/Shougo/neocomplcache.vim.git
 [submodule "iTerm-2-Color-Themes"]
 	path = iTerm-2-Color-Themes
-	url = https://github.com/baskerville/iTerm-2-Color-Themes.git
+	url = https://github.com/e-jigsaw/iTerm-2-Color-Themes.git
