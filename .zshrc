@@ -35,7 +35,6 @@ alias mou='open -a Mou'
 alias gr='grunt'
 alias bi='bundle install'
 alias be='bundle exec'
-alias kitlogin='ssh -l 'b0122502' dhcpa.cis.kit.ac.jp'
 
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
