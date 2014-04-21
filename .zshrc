@@ -32,10 +32,10 @@ alias n='node'
 alias h='heroku'
 alias sb='open -a Sublime\ Text\ 2'
 alias mou='open -a Mou'
+alias atom='open -a Atom'
 alias gr='grunt'
 alias bi='bundle install'
 alias be='bundle exec'
-alias kitlogin='ssh -l 'b0122502' dhcpa.cis.kit.ac.jp'
 
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
@@ -75,3 +75,6 @@ source ${HOME}/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # https://github.com/zsh-users/zsh-completions
 fpath=(${HOME}/dotfiles/zsh-completions/src $fpath)
+
+# https://github.com/rupa/z
+source `brew --prefix`/etc/profile.d/z.sh
