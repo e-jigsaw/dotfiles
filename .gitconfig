@@ -6,15 +6,15 @@
 
 [alias]
     gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-    st = status
+    st = status --branch --short
     df = diff
     dfc = diff --cached
     dfs = diff --staged
+    dfw = diff --color-words
     co = checkout
     last = show -1 HEAD --stat -p
     me = log --author=jigsaw
     ci = commit
-    dfw = diff --color-words
     b = branch
     log = log --decorate
     l = log --decorate
