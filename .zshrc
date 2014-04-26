@@ -42,7 +42,6 @@ if [ -f $HOME/.nvm/nvm.sh ]; then
 	source ~/.nvm/nvm.sh
 	npm_dir=${NVM_PATH}_modules
 	export NODE_PATH=$npm_dir
-	nvm use default
 fi
 
 # rvm
