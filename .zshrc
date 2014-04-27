@@ -45,7 +45,7 @@ if [ -f $HOME/.nvm/nvm.sh ]; then
 fi
 
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # history
 HISTFILE=~/.zsh_history
@@ -76,4 +76,6 @@ source ${HOME}/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath=(${HOME}/dotfiles/zsh-completions/src $fpath)
 
 # https://github.com/rupa/z
-source `brew --prefix`/etc/profile.d/z.sh
+if [ -f /usr/local/etc/profile.d/z.sh ]; then
+  source /usr/local/etc/profile.d/z.sh
+fi
