@@ -36,6 +36,8 @@ alias gr='grunt'
 alias bi='bundle install'
 alias be='bundle exec'
 
+bindkey '^E^E' beginning-of-line
+
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
 	source ~/.nvm/nvm.sh
