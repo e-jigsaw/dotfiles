@@ -35,6 +35,7 @@ alias atom='open -a Atom'
 alias gr='grunt'
 alias bi='bundle install'
 alias be='bundle exec'
+alias -g NOTIFY='; echo iTerm2 Trigger'
 alias -s coffee='coffee'
 
 bindkey '^E^E' beginning-of-line
