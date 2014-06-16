@@ -21,6 +21,7 @@
     fix = commit --amend
     pl = pull
     ps = push
+    sb = submodule
 
 [color]
     ui = true
