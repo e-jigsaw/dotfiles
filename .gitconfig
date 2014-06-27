@@ -1,6 +1,6 @@
 [user]
     name = jigsaw
-    email = jigsaw@live.jp 
+    email = jigsaw@live.jp
 [core]
     excludesfile = ~/.gitignore
 
@@ -28,3 +28,6 @@
     diff = true
 [credential]
 	helper = osxkeychain
+
+[ghq]
+  root = ~/.ghq
