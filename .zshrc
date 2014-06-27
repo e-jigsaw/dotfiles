@@ -39,6 +39,7 @@ alias -g @l='| less'
 alias gcd='cd $(ghq list --full-path | peco)'
 alias gh='gh-open'
 alias gho='gh-open $(ghq list -p | peco)'
+alias ga='open -a Atom $(ghq list -p | peco)'
 
 bindkey '^E^E' beginning-of-line
 
