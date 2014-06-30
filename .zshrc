@@ -40,6 +40,9 @@ alias c='cd $(ghq list --full-path | peco)'
 alias gh='gh-open'
 alias gho='gh-open $(ghq list -p | peco)'
 alias ga='open -a Atom $(ghq list -p | peco)'
+alias jk='journal write'
+alias jc='journal comment'
+alias js='journal send'
 
 bindkey '^E^E' beginning-of-line
 
