@@ -77,13 +77,13 @@ function cd() {
 }
 
 # http://mimosa-pudica.net/zsh-incremental.html
-source ${HOME}/dotfiles/incr*.zsh
+source ${HOME}/.ghq/github.com/e-jigsaw/dotfiles/incr*.zsh
 
 # https://github.com/zsh-users/zsh-syntax-highlighting
-source ${HOME}/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${HOME}/.ghq/github.com/e-jigsaw/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # https://github.com/zsh-users/zsh-completions
-fpath=(${HOME}/dotfiles/zsh-completions/src $fpath)
+fpath=(${HOME}/.ghq/github.com/e-jigsaw/dotfiles/zsh-completions/src $fpath)
 
 # https://github.com/rupa/z
 if [ -f /usr/local/etc/profile.d/z.sh ]; then
