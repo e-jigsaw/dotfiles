@@ -30,4 +30,4 @@
 	helper = osxkeychain
 
 [ghq]
-  root = ~/.ghq
+  root = ~/.ghq/src

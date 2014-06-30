@@ -54,8 +54,8 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # go
-export GOPATH=~/.go
-export PATH=$PATH:~/.go/bin
+export GOPATH=~/.ghq
+export PATH=$PATH:~/.ghq/bin
 
 # history
 HISTFILE=~/.zsh_history
@@ -77,13 +77,13 @@ function cd() {
 }
 
 # http://mimosa-pudica.net/zsh-incremental.html
-source ${HOME}/.ghq/github.com/e-jigsaw/dotfiles/incr*.zsh
+source ${HOME}/.ghq/src/github.com/e-jigsaw/dotfiles/incr*.zsh
 
 # https://github.com/zsh-users/zsh-syntax-highlighting
-source ${HOME}/.ghq/github.com/e-jigsaw/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${HOME}/.ghq/src/github.com/e-jigsaw/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # https://github.com/zsh-users/zsh-completions
-fpath=(${HOME}/.ghq/github.com/e-jigsaw/dotfiles/zsh-completions/src $fpath)
+fpath=(${HOME}/.ghq/src/github.com/e-jigsaw/dotfiles/zsh-completions/src $fpath)
 
 # https://github.com/rupa/z
 if [ -f /usr/local/etc/profile.d/z.sh ]; then
