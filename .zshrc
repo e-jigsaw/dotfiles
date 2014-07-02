@@ -44,6 +44,8 @@ alias ga='open -a Atom $(ghq list -p | peco)'
 alias jk='journal write'
 alias jc='journal comment'
 alias js='journal send'
+alias up='cd ../'
+alias upp='cd ../../'
 
 bindkey '^E^E' beginning-of-line
 
