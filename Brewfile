@@ -8,6 +8,7 @@ install casperjs
 install git
 install go
 install mercurial
+install pandoc
 install phantomjs
 install z
 install zsh
