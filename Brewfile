@@ -14,3 +14,4 @@ install z
 install zsh
 
 cask install mou
+cask install heroku-toolbelt
