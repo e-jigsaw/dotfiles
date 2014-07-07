@@ -50,6 +50,7 @@ alias jc='journal comment'
 alias js='journal send'
 alias up='cd ../'
 alias upp='cd ../../'
+alias o='open'
 
 bindkey '^E^E' beginning-of-line
 
