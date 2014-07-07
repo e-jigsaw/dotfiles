@@ -20,6 +20,9 @@ export GIT_EDITOR=vim
 PROMPT="%F{green}[%D{%T}] %B%n@%m%b%f %F{yellow}%~ %1 %F{blue}%(v|%1v|)%f
 %F{magenta}✈%f "
 
+# show current directory on tab
+echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
+
 # display
 zstyle ':completion:*' list-separator '-->'
 
