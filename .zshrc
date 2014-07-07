@@ -25,7 +25,8 @@ zstyle ':completion:*' list-separator '-->'
 
 # alias
 alias g='git'
-alias gs='git status --branch --short'
+alias gs='git st'
+alias ggr='git gr'
 alias ls='ls -G'
 alias la='ls -laG'
 alias n='node'
