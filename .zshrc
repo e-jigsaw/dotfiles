@@ -80,7 +80,7 @@ setopt auto_menu
 
 # util
 function cd() {
-	builtin cd $@ && ls -a;
+	builtin cd $@ && ls -a && echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007";
 }
 
 # http://mimosa-pudica.net/zsh-incremental.html
