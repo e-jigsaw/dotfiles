@@ -11,6 +11,7 @@ install go
 install mercurial
 install phantomjs
 install the_platinum_searcher
+install tmux
 install z
 install zsh
 
