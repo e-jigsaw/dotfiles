@@ -18,7 +18,7 @@ export GIT_EDITOR=vim
 
 # prompt
 PROMPT="%F{green}[%D{%T}] %B%n@%m%b%f %F{yellow}%~ %1 %F{blue}%(v|%1v|)%f
-%F{blue}✈%f "
+%F{magenta}✈%f "
 
 # display
 zstyle ':completion:*' list-separator '-->'
