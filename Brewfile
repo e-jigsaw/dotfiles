@@ -10,6 +10,7 @@ install git
 install go
 install mercurial
 install phantomjs
+install terminal-notifier
 install the_platinum_searcher
 install tmux
 install z
