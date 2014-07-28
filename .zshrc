@@ -94,11 +94,6 @@ fi
 export GOPATH=~/.ghq
 export PATH=$PATH:~/.ghq/bin
 
-## gvm
-if [ -f $HOME/.gvm/scripts/gvm ]; then
-  source /Users/Jigsaw/.gvm/scripts/gvm
-fi
-
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
