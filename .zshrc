@@ -41,7 +41,6 @@ alias -s coffee='coffee'
 alias -g @l='| less'
 alias -g @p='| peco'
 alias -g @c='| pbcopy'
-alias c='cd $(ghq list --full-path | peco)'
 alias gh='gh-open'
 alias gho='gh-open $(ghq list -p | peco)'
 alias ga='open -a Atom $(ghq list -p | peco)'
@@ -53,6 +52,14 @@ alias upp='cd ../../'
 alias o='open'
 
 bindkey '^E^E' beginning-of-line
+
+function _peco_cd() {
+  cd $(ghq list --full-path | peco)
+  zle reset-prompt
+}
+
+zle -N peco-cd _peco_cd
+bindkey '^F' peco-cd
 
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
