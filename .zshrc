@@ -62,6 +62,21 @@ function _peco_cd() {
 zle -N peco-cd _peco_cd
 bindkey '^F' peco-cd
 
+function peco-select-history() {
+	typeset tac
+	if which tac > /dev/null; then
+		tac=tac
+	else
+		tac='tail -r'
+	fi
+	BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+	CURSOR=$#BUFFER
+	zle redisplay
+}
+zle -N peco-select-history
+stty -ixon
+bindkey '^r' peco-select-history
+
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
 	source ~/.nvm/nvm.sh
