@@ -1,6 +1,3 @@
-# export path
-# export PATH=~/.cabal/bin:$PATH
-
 # color
 autoload -Uz colors
 colors
@@ -37,11 +34,6 @@ alias h='heroku'
 alias a='open -a Atom'
 alias bi='bundle install'
 alias be='bundle exec'
-alias -s coffee='coffee'
-alias -g @l='| less'
-alias -g @p='| peco'
-alias -g @c='| pbcopy'
-alias -g @b='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
 alias gh='gh-open'
 alias gho='gh-open $(ghq list -p | peco)'
 alias ga='open -a Atom $(ghq list -p | peco)'
@@ -52,8 +44,18 @@ alias up='cd ../'
 alias upp='cd ../../'
 alias o='open'
 
+## global
+alias -g @l='| less'
+alias -g @p='| peco'
+alias -g @c='| pbcopy'
+alias -g @b='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
+
+## suffix
+alias -s coffee='coffee'
+
 bindkey '^E^E' beginning-of-line
 
+# peco cd
 function _peco_cd() {
   cd $(ghq list --full-path | peco)
   zle reset-prompt
@@ -62,6 +64,7 @@ function _peco_cd() {
 zle -N peco-cd _peco_cd
 bindkey '^F' peco-cd
 
+# peco bck-i-search
 function peco-select-history() {
 	typeset tac
 	if which tac > /dev/null; then
