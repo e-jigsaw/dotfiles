@@ -48,7 +48,8 @@ alias o='open'
 alias -g @l='| less'
 alias -g @p='| peco'
 alias -g @c='| pbcopy'
-alias -g @b='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
+alias -g @gb='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
+alias -g @gf='`git status --porcelain | peco | sed -e "s/ M //g"`'
 
 ## suffix
 alias -s coffee='coffee'
