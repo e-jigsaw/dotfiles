@@ -7,9 +7,9 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%b|%a)'
 precmd () {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 export GIT_EDITOR=vim
 
@@ -66,15 +66,15 @@ bindkey '^F' peco-cd
 
 # peco bck-i-search
 function peco-select-history() {
-	typeset tac
-	if which tac > /dev/null; then
-		tac=tac
-	else
-		tac='tail -r'
-	fi
-	BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
-	CURSOR=$#BUFFER
-	zle redisplay
+  typeset tac
+  if which tac > /dev/null; then
+    tac=tac
+  else
+    tac='tail -r'
+  fi
+  BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
 }
 zle -N peco-select-history
 stty -ixon
@@ -82,9 +82,9 @@ bindkey '^r' peco-select-history
 
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
-	source ~/.nvm/nvm.sh
-	npm_dir=${NVM_PATH}_modules
-	export NODE_PATH=$npm_dir
+  source ~/.nvm/nvm.sh
+  npm_dir=${NVM_PATH}_modules
+  export NODE_PATH=$npm_dir
 fi
 
 # rvm
@@ -110,7 +110,7 @@ setopt auto_menu
 
 # util
 function cd() {
-	builtin cd $@ && ls -a && echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007";
+  builtin cd $@ && ls -a && echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007";
 }
 
 # http://mimosa-pudica.net/zsh-incremental.html
