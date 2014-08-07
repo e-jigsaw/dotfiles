@@ -81,6 +81,16 @@ zle -N peco-select-history
 stty -ixon
 bindkey '^r' peco-select-history
 
+# git bind
+function _git_st() {
+  BUFFER="git status --branch --short"
+  CURSOR=$#BUFFER
+  zle accept-line
+}
+
+zle -N git-st _git_st
+bindkey '^gs' git-st
+
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
   source ~/.nvm/nvm.sh
