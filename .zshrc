@@ -58,8 +58,9 @@ bindkey '^E^E' beginning-of-line
 
 # peco cd
 function _peco_cd() {
-  cd $(ghq list --full-path | peco)
-  zle reset-prompt
+  BUFFER="cd $(ghq list --full-path | peco)"
+  CURSOR=$#BUFFER
+  zle accept-line
 }
 
 zle -N peco-cd _peco_cd
