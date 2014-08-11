@@ -50,6 +50,7 @@ alias -g @p='| peco'
 alias -g @c='| pbcopy'
 alias -g @gb='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
 alias -g @gf='`git status --porcelain | peco | sed -e "s/^.. //g"`'
+alias -g @gl='`git log --oneline | peco | cut -d" " -f1`'
 
 ## suffix
 alias -s coffee='coffee'
