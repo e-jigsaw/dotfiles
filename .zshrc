@@ -77,7 +77,6 @@ function peco-select-history() {
   fi
   BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
   CURSOR=$#BUFFER
-  zle accept-line
 }
 zle -N peco-select-history
 stty -ixon
