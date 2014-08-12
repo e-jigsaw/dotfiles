@@ -90,7 +90,7 @@ function _git_st() {
 }
 
 zle -N git-st _git_st
-bindkey '^g^s' git-st
+bindkey '^g^[[B' git-st
 
 # open bind
 function _open_atom() {
@@ -100,7 +100,7 @@ function _open_atom() {
 }
 
 zle -N open-atom _open_atom
-bindkey '^o^a' open-atom
+bindkey '^o^[[D' open-atom
 
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
