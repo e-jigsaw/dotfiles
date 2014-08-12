@@ -90,7 +90,17 @@ function _git_st() {
 }
 
 zle -N git-st _git_st
-bindkey '^gs' git-st
+bindkey '^g^s' git-st
+
+# open bind
+function _open_atom() {
+  BUFFER="open -a Atom ."
+  CURSOR=$#BUFFER
+  zle accept-line
+}
+
+zle -N open-atom _open_atom
+bindkey '^o^a' open-atom
 
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
