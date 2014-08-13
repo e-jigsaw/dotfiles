@@ -102,6 +102,14 @@ function _open_atom() {
 zle -N open-atom _open_atom
 bindkey '^o^[[D' open-atom
 
+function _open_finder() {
+  BUFFER="open ."
+  CURSOR=$#BUFFER
+  zle accept-line
+}
+zle -N open-finder _open_finder
+bindkey '^o^f' open-finder
+
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
   source ~/.nvm/nvm.sh
