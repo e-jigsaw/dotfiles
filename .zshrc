@@ -156,3 +156,9 @@ fpath=(${HOME}/.ghq/src/github.com/e-jigsaw/dotfiles/zsh-completions/src $fpath)
 if [ -f /usr/local/etc/profile.d/z.sh ]; then
   source /usr/local/etc/profile.d/z.sh
 fi
+
+# awscli
+
+if [ -f /usr/local/share/zsh/site-functions/_aws ]; then
+  source /usr/local/share/zsh/site-functions/_aws
+fi
