@@ -1,10 +1,32 @@
 dotfiles
 ========
 
-dotfiles を管理するよ!
+# Usage
+
+## tmux keybind
+
+| key | description |
+| --- | ----------- |
+| C-z | Meta        |
+| r   | reload config |
+| n   | new window  |
+| d   | vertical split |
+| D   | horizonal split |
+| hjkl| move pane (like vim) |
+| m   | choose window |
+| w   | close window |
+| W   | close pane  |
+
+# Installation
 
 ```
-sh install.sh
+% sh install.sh
 ```
 
-でシンボリックリンクを張って即俺環境が構築できるよ！
+# Author
+
+* jigsaw(http://jgs.me)
+
+# License
+
+MIT
