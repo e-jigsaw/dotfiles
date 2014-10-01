@@ -23,6 +23,24 @@ echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
 # display
 zstyle ':completion:*' list-separator '-->'
 
+# vi mode
+bindkey -v
+function zle-line-init zle-keymap-select {
+  vimode="${${KEYMAP/vicmd/NORMAL}/(main|viins)/INSERT}"
+  if [ -n "$TMUX" ]; then
+    if [ $vimode = "NORMAL" ]; then
+      modebg="colour45"
+      modefg="colour15"
+    else
+      modebg="colour202"
+      modefg="colour255"
+    fi
+    tmux set -g status-left "#[bg=${modebg}, fg=${modefg}] $vimode " > /dev/null
+  fi
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
 # alias
 alias g='git'
 alias gs='git st'
