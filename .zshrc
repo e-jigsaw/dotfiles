@@ -61,6 +61,7 @@ alias js='journal send'
 alias up='cd ../'
 alias upp='cd ../../'
 alias o='open'
+alias t='tmux'
 
 ## global
 alias -g @l='| less'
