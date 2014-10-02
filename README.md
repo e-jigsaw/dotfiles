@@ -19,6 +19,8 @@ dotfiles
 | q   | close session |
 | [   | previous window |
 | ]   | next window |
+| c   | copy mode   |
+| v   | paste       |
 
 ## zsh aliases
 
