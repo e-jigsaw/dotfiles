@@ -16,6 +16,9 @@ dotfiles
 | m   | choose window |
 | w   | close window |
 | W   | close pane  |
+| q   | close session |
+| [   | previous window |
+| ]   | next window |
 
 ## zsh aliases
 
