@@ -21,6 +21,7 @@ dotfiles
 | ]   | next window |
 | c   | copy mode   |
 | v   | paste       |
+| z   | detach      |
 
 ## zsh aliases
 
