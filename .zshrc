@@ -129,6 +129,14 @@ function _open_finder() {
 zle -N open-finder _open_finder
 bindkey '^o^f' open-finder
 
+function _open_tmux() {
+  BUFFER="tmux"
+  CURSOR=$#BUFFER
+  zle accept-line
+}
+zle -N open-tmux _open_tmux
+bindkey '^t' open-tmux
+
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
   source ~/.nvm/nvm.sh
