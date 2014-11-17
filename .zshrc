@@ -161,9 +161,9 @@ setopt hist_save_nodups
 setopt hist_reduce_blanks
 
 # comp
-autoload -Uz compinit
-compinit
-setopt auto_menu
+autoload -Uz compinit && compinit -u
+zstyle ':completion:*' menu select=20
+setopt menu_complete
 
 # util
 function cd() {
