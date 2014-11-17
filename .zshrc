@@ -162,7 +162,7 @@ setopt hist_reduce_blanks
 
 # comp
 autoload -Uz compinit && compinit -u
-zstyle ':completion:*' menu select=0
+zstyle ':completion:*:default' menu select=2
 setopt menu_complete
 
 # util
