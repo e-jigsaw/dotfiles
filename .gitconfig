@@ -27,8 +27,9 @@
 [color]
     ui = true
     diff = true
+
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
 [ghq]
-  root = ~/.ghq/src
+    root = ~/.ghq/src
