@@ -1,20 +1,18 @@
-# update homebrew
-update
+tap caskroom/cask
+install brew-cask
 
-# update formula
-upgrade
+tap rcmdnk/file
+install brew-file
 
-install caskroom/cask/brew-cask
 install casperjs
 install git
 install go
 install mercurial
 install phantomjs
-install terminal-notifier
 install the_platinum_searcher
 install tmux
+install vim
 install z
 install zsh
 
-cask install mou
 cask install heroku-toolbelt
