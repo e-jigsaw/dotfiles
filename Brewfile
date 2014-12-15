@@ -18,6 +18,9 @@ install zsh
 tap peco/peco
 install peco
 
+tap motemen/ghq
+install ghq
+
 cask install google-chrome
 cask install heroku-toolbelt
 
