@@ -15,6 +15,9 @@ install vim
 install z
 install zsh
 
+tap peco/peco
+install peco
+
 cask install google-chrome
 cask install heroku-toolbelt
 
