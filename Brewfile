@@ -7,6 +7,7 @@ install brew-file
 install casperjs
 install git
 install go
+install nodebrew
 install mercurial
 install phantomjs
 install the_platinum_searcher
@@ -23,9 +24,11 @@ install ghq
 
 cask install 1password
 cask install alfred
+cask install atom
 cask install bartender
 cask install bettertouchtool
 cask install dropbox
+cask install foldingtext
 cask install google-chrome
 cask install google-japanese-ime
 cask install heroku-toolbelt
@@ -35,4 +38,5 @@ cask install karabiner
 cask install shiftit
 cask install xtrafinder
 cask install xquartz
+cask install yorufukurou
 
