@@ -62,6 +62,9 @@ alias up='cd ../'
 alias upp='cd ../../'
 alias o='open'
 alias t='tmux'
+alias bf='brew file'
+alias bfe='brew file edit'
+alias bfi='brew file install'
 
 ## global
 alias -g @l='| less'
