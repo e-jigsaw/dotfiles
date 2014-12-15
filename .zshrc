@@ -65,7 +65,6 @@ alias t='tmux'
 alias bf='brew file'
 alias bfe='brew file edit'
 alias bfi='brew file install'
-alias nb='nodebrew'
 
 ## global
 alias -g @l='| less'
@@ -144,6 +143,12 @@ bindkey '^t' open-tmux
 # nvm
 if [ -f $HOME/.nvm/nvm.sh ]; then
   source ~/.nvm/nvm.sh
+  npm_dir=${NVM_PATH}_modules
+  export NODE_PATH=$npm_dir
+fi
+
+if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+  source $(brew --prefix nvm)/nvm.sh
   npm_dir=${NVM_PATH}_modules
   export NODE_PATH=$npm_dir
 fi
