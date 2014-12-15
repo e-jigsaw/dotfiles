@@ -17,3 +17,18 @@ install zsh
 
 cask install google-chrome
 cask install heroku-toolbelt
+
+appstore Alfred
+appstore Evernote
+appstore GarageBand
+appstore GIFBrewery
+appstore iMovie
+appstore iPhoto
+appstore Keynote
+appstore Numbers
+appstore Pages
+appstore Skitch
+appstore Slack
+appstore The Unarchiver
+appstore Xcode
+
