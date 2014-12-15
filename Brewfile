@@ -21,8 +21,17 @@ install peco
 tap motemen/ghq
 install ghq
 
+cask install 1password
+cask install bartender
+cask install bettertouchtool
 cask install google-chrome
 cask install heroku-toolbelt
+cask install hyperswitch
+cask install iterm2
+cask install karabiner
+cask install shiftit
+cask install xtrafinder
+cask install xquartz
 
 appstore Alfred
 appstore Evernote
