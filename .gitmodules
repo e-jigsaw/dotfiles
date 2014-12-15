@@ -16,3 +16,6 @@
 [submodule "iTerm-2-Color-Themes"]
 	path = iTerm-2-Color-Themes
 	url = https://github.com/e-jigsaw/iTerm-2-Color-Themes.git
+[submodule ".atom"]
+	path = .atom
+	url = https://github.com/e-jigsaw/.atom.git
