@@ -7,6 +7,7 @@ install brew-file
 install casperjs
 install git
 install go
+install nodebrew
 install mercurial
 install phantomjs
 install the_platinum_searcher
@@ -22,28 +23,23 @@ tap motemen/ghq
 install ghq
 
 cask install 1password
+cask install alfred
+cask install atom
 cask install bartender
 cask install bettertouchtool
+cask install dropbox
+cask install evernote
+cask install foldingtext
 cask install google-chrome
+cask install google-japanese-ime
 cask install heroku-toolbelt
 cask install hyperswitch
 cask install iterm2
 cask install karabiner
+cask install menumeters
 cask install shiftit
+cask install skitch
 cask install xtrafinder
 cask install xquartz
-
-appstore Alfred
-appstore Evernote
-appstore GarageBand
-appstore GIFBrewery
-appstore iMovie
-appstore iPhoto
-appstore Keynote
-appstore Numbers
-appstore Pages
-appstore Skitch
-appstore Slack
-appstore The Unarchiver
-appstore Xcode
+cask install yorufukurou
 
