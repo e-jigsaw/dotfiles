@@ -65,6 +65,7 @@ alias t='tmux'
 alias bf='brew file'
 alias bfe='brew file edit'
 alias bfi='brew file install'
+alias nb='nodebrew'
 
 ## global
 alias -g @l='| less'
