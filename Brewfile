@@ -15,4 +15,5 @@ install vim
 install z
 install zsh
 
+cask install google-chrome
 cask install heroku-toolbelt
