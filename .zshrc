@@ -147,6 +147,12 @@ if [ -f $HOME/.nvm/nvm.sh ]; then
   export NODE_PATH=$npm_dir
 fi
 
+if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+  source $(brew --prefix nvm)/nvm.sh
+  npm_dir=${NVM_PATH}_modules
+  export NODE_PATH=$npm_dir
+fi
+
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
