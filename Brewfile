@@ -7,7 +7,7 @@ install brew-file
 install casperjs
 install git
 install go
-install nodebrew
+install nvm
 install mercurial
 install phantomjs
 install the_platinum_searcher
