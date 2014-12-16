@@ -39,6 +39,7 @@ cask install karabiner
 cask install menumeters
 cask install shiftit
 cask install skitch
+cask install slack
 cask install xtrafinder
 cask install xquartz
 cask install yorufukurou
