@@ -7,7 +7,7 @@ install brew-file
 install casperjs
 install git
 install go
-install nodebrew
+install nvm
 install mercurial
 install phantomjs
 install the_platinum_searcher
@@ -39,6 +39,7 @@ cask install karabiner
 cask install menumeters
 cask install shiftit
 cask install skitch
+cask install slack
 cask install xtrafinder
 cask install xquartz
 cask install yorufukurou
