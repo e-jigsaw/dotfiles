@@ -170,9 +170,6 @@ setopt hist_ignore_all_dups
 setopt hist_save_nodups
 setopt hist_reduce_blanks
 
-# comp
-autoload -Uz compinit && compinit -u
-
 # util
 function cd() {
   builtin cd $@ && ls -a && echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007";
@@ -186,6 +183,9 @@ source ${HOME}/.ghq/src/github.com/e-jigsaw/dotfiles/zsh-syntax-highlighting/zsh
 
 # https://github.com/zsh-users/zsh-completions
 fpath=(${HOME}/.ghq/src/github.com/e-jigsaw/dotfiles/zsh-completions/src $fpath)
+if [ -f $(brew --prefix git)/share/zsh/site-functions/_git ]; then
+  fpath=($(brew --prefix git)/share/zsh/site-functions $fpath)
+fi
 
 # https://github.com/rupa/z
 if [ -f /usr/local/etc/profile.d/z.sh ]; then
@@ -196,3 +196,6 @@ fi
 if [ -f /usr/local/share/zsh/site-functions/_aws ]; then
   source /usr/local/share/zsh/site-functions/_aws
 fi
+
+# comp
+autoload -Uz compinit && compinit -u
