@@ -193,7 +193,6 @@ if [ -f /usr/local/etc/profile.d/z.sh ]; then
 fi
 
 # awscli
-
 if [ -f /usr/local/share/zsh/site-functions/_aws ]; then
   source /usr/local/share/zsh/site-functions/_aws
 fi
