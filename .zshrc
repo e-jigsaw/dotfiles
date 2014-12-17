@@ -172,7 +172,6 @@ setopt hist_reduce_blanks
 
 # comp
 autoload -Uz compinit && compinit -u
-setopt menu_complete
 
 # util
 function cd() {
