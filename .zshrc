@@ -117,7 +117,7 @@ bindkey '^g^[[B' git-st
 
 # open bind
 function _open_atom() {
-  BUFFER="open -a Atom ."
+  BUFFER="atom ."
   CURSOR=$#BUFFER
   zle accept-line
 }
