@@ -10,6 +10,7 @@ install go
 install nvm
 install mercurial
 install phantomjs
+install reattach-to-user-namespace
 install the_platinum_searcher
 install tmux
 install vim
