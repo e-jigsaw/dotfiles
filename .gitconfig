@@ -23,6 +23,7 @@
     ps = push
     sb = submodule
     cp = cherry-pick
+    unstage = reset
 
 [color]
     ui = true
