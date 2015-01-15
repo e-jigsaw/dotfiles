@@ -45,6 +45,7 @@ zle -N zle-keymap-select
 alias g='git'
 alias gs='git st'
 alias ggr='git gr'
+alias git-branch-clean="git fetch --prune origin && git branch --merged origin/master | grep -vE ' master$|^\*' | xargs git branch -d"
 alias ls='ls -G'
 alias la='ls -laG'
 alias n='node'
