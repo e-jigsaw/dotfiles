@@ -56,9 +56,6 @@ alias be='bundle exec'
 alias gh='gh-open'
 alias gho='gh-open $(ghq list -p | peco)'
 alias ga='open -a Atom $(ghq list -p | peco)'
-alias jk='journal write'
-alias jc='journal comment'
-alias js='journal send'
 alias up='cd ../'
 alias upp='cd ../../'
 alias o='open'
@@ -170,6 +167,9 @@ setopt share_history
 setopt hist_ignore_all_dups
 setopt hist_save_nodups
 setopt hist_reduce_blanks
+
+# node
+export PATH=$PATH:./node_modules/.bin
 
 # util
 function cd() {
