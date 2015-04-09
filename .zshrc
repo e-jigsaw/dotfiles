@@ -74,7 +74,7 @@ alias -g @gf='`git status --porcelain | peco | sed -e "s/^.. //g"`'
 alias -g @gl='`git log --oneline | peco | cut -d" " -f1`'
 
 ## suffix
-alias -s coffee='coffee'
+alias -s ls='lsc'
 
 bindkey '^E^E' beginning-of-line
 
