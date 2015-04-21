@@ -2,3 +2,4 @@
 *.log
 *.swp
 .idea
+.atom-build.lson
