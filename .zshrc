@@ -198,5 +198,11 @@ if [ -f /usr/local/share/zsh/site-functions/_aws ]; then
   source /usr/local/share/zsh/site-functions/_aws
 fi
 
+# google-cloud-sdk
+if [ -f /usr/local/etc/google-cloud-sdk/path.zsh.inc ]; then
+  source /usr/local/etc/google-cloud-sdk/path.zsh.inc
+  source /usr/local/etc/google-cloud-sdk/completion.zsh.inc
+fi
+
 # comp
 autoload -Uz compinit && compinit -u
