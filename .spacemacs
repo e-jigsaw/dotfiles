@@ -159,6 +159,14 @@ before layers configuration."
   (ac-config-default)
   (ac-set-trigger-key "TAB")
   (setq ac-use-fuzzy t)
+  ;; junk-file
+  (require 'open-junk-file)
+  (setq open-junk-file-format "~/Dropbox/.junk/%Y-%m-%d/%H%M.")
+  ;; insert-current-time
+  (defun insert-current-time()
+    (interactive)
+    (insert (format-time-string "%H:%M:%S" (current-time)))
+  )
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
