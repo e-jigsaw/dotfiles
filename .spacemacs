@@ -167,6 +167,28 @@ before layers configuration."
     (interactive)
     (insert (format-time-string "%H:%M:%S" (current-time)))
   )
+  ;; eshell prompt
+  (setq eshell-prompt-function (lambda ()
+                                 (concat "["
+                                         (eshell/pwd)
+                                         (if (= (user-uid) 0) "]\n#" "]\n✈"))))
+  ;; eshell alias
+  (setq eshell-command-aliases-list
+        (append
+         (list
+          (list "la" "ls -alG")
+          (list "ls" "ls -G")
+          (list "g" "git")
+          (list "gs" "git st")
+          (list "ggr" "git gr")
+          (list "ga" "git add")
+          (list "h" "heroku")
+          (list "bi" "bundle install")
+          (list "be" "bundle exec")
+          (list "up" "cd ../")
+          (list "upp" "cd ../../")
+          (list "o" "open")
+          (list "t" "tmux"))))
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
