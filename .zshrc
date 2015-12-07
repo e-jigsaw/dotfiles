@@ -207,3 +207,7 @@ fi
 
 # comp
 autoload -Uz compinit && compinit -u
+
+if [ -f ${HOME}/.zprofile ]; then
+  source ${HOME}/.zprofile
+fi
