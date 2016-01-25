@@ -50,7 +50,6 @@ alias ga='git add'
 alias gae='git add -p'
 alias ls='ls -G'
 alias la='ls -laG'
-alias n='nvm'
 alias nr='npm run'
 alias h='heroku'
 alias a='atom'
@@ -65,6 +64,10 @@ alias bf='brew file'
 alias bfe='brew file edit'
 alias bfi='brew file install'
 alias bc='brew cask'
+alias ghc="stack ghc --"
+alias ghci="stack ghci"
+alias runghc="stack runghc --"
+alias runhaskell="stack runghc --"
 
 ## global
 alias -g @l='| less'
@@ -147,12 +150,6 @@ if [ -f $HOME/.nvm/nvm.sh ]; then
   export NODE_PATH=$npm_dir
 fi
 
-if [ -f $(brew --prefix nvm)/nvm.sh ]; then
-  source $(brew --prefix nvm)/nvm.sh
-  npm_dir=${NVM_PATH}_modules
-  export NODE_PATH=$npm_dir
-fi
-
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -187,11 +184,6 @@ source ${HOME}/.ghq/src/github.com/e-jigsaw/dotfiles/zsh-syntax-highlighting/zsh
 fpath=(${HOME}/.ghq/src/github.com/e-jigsaw/dotfiles/zsh-completions/src $fpath)
 if [ -f $(brew --prefix git)/share/zsh/site-functions/_git ]; then
   fpath=($(brew --prefix git)/share/zsh/site-functions $fpath)
-fi
-
-# https://github.com/rupa/z
-if [ -f /usr/local/etc/profile.d/z.sh ]; then
-  source /usr/local/etc/profile.d/z.sh
 fi
 
 # awscli
