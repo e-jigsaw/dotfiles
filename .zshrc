@@ -68,6 +68,9 @@ alias ghc="stack ghc --"
 alias ghci="stack ghci"
 alias runghc="stack runghc --"
 alias runhaskell="stack runghc --"
+alias d='docker'
+alias dc='docker-compose'
+alias dm='docker-machine'
 
 ## global
 alias -g @l='| less'
