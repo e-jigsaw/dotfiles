@@ -1,6 +1,7 @@
 [user]
     name = jigsaw
-    email = jigsaw@live.jp
+    email = m@jgs.me
+    signingkey = F0B3B6EB
 [core]
     excludesfile = ~/.gitignore
 
@@ -34,3 +35,7 @@
 
 [ghq]
     root = ~/.ghq/src
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg2
