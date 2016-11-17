@@ -77,6 +77,7 @@ alias runhaskell="stack runghc --"
 alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine'
+alias ds='docker-sync'
 
 ## global
 alias -g @l='| less'
@@ -212,3 +213,6 @@ autoload -Uz compinit && compinit -u
 if [ -f ${HOME}/.zprofile ]; then
   source ${HOME}/.zprofile
 fi
+
+# direnv
+eval "$(direnv hook zsh)"
