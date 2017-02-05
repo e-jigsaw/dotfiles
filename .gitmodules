@@ -19,6 +19,3 @@
 [submodule ".atom"]
 	path = .atom
 	url = https://github.com/e-jigsaw/.atom.git
-[submodule ".emacs.d"]
-	path = .emacs.d
-	url = git@github.com:e-jigsaw/spacemacs.git
