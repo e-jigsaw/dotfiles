@@ -1,0 +1,29 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'kassio/neoterm'
+hook_add = '''
+nnoremap <silent> ,rc :TREPLSendFile<cr>
+nnoremap <silent> ,rl :TREPLSendLine<cr>
+vnoremap <silent> ,rl :TREPLSendSelection<cr>
+nnoremap <silent> vt :Ttoggle<cr>
+nnoremap <silent> vs :terminal<cr>
+'''
+
