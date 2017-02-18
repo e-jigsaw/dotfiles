@@ -8,6 +8,6 @@ repo = 'vim-airline/vim-airline'
 repo = 'vim-airline/vim-airline-themes'
 depends = 'vim-airline'
 hook_add = '''
-let g:airline_theme='murmur'
+let g:airline_theme='molokai'
 '''
 
