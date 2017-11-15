@@ -34,11 +34,11 @@
     helper = osxkeychain
 
 [ghq]
-    root = ~/.ghq/src
+    root = ~/ghq/src
 [commit]
     gpgsign = true
 [gpg]
-    program = gpg2
+	program = /usr/local/bin/gpg
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less
