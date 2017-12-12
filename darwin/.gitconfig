@@ -34,7 +34,7 @@
     helper = osxkeychain
 
 [ghq]
-    root = ~/ghq/src
+    root = ~/dev/src
 [commit]
     gpgsign = true
 [gpg]
