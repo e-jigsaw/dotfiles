@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 18,
+    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
+    "tslint.autoFixOnSave": true
+}
