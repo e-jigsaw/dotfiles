@@ -3,5 +3,7 @@
     "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
     "editor.tabSize": 2,
     "editor.renderWhitespace": "boundary",
-    "tslint.autoFixOnSave": true
+    "tslint.autoFixOnSave": true,
+    "html.format.endWithNewline": true,
+    "workbench.statusBar.feedback.visible": false
 }
