@@ -3,7 +3,25 @@
     "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
     "editor.tabSize": 2,
     "editor.renderWhitespace": "boundary",
-    "tslint.autoFixOnSave": true,
-    "html.format.endWithNewline": true,
-    "workbench.statusBar.feedback.visible": false
+    "workbench.statusBar.feedback.visible": false,
+    "files.insertFinalNewline": true,
+    "editor.renderControlCharacters": true,
+    "workbench.editor.enablePreview": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "typescript",
+            "autoFix": true
+        },
+        {
+            "language": "typescriptreact",
+            "autoFix": true
+        }
+    ]
 }
