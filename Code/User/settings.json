@@ -23,5 +23,7 @@
             "language": "typescriptreact",
             "autoFix": true
         }
-    ]
+    ],
+    "emmet.showExpandedAbbreviation": "never",
+    "extensions.ignoreRecommendations": false
 }
