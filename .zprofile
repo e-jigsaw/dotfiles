@@ -1,0 +1,15 @@
+alias g='git'
+alias gs='git st'
+alias ggr='git gr'
+alias git-branch-clean="git fetch --prune origin && git branch --merged origin/master | grep -vE ' master$|^\*' | xargs git branch -d"
+alias git-branch-clean-upstream="git fetch --prune upstream && git branch --merged upstream/master | grep -vE ' master$|^\*' | xargs git branch -d"
+alias ga='git add'
+alias gae='git add -p'
+alias ls='ls -G'
+alias la='ls -laG'
+alias up='cd ../'
+alias upp='cd ../../'
+alias o='open'
+alias d='docker'
+alias dc='docker-compose'
+alias y='yarn'
