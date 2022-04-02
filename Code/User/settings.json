@@ -1,29 +1,29 @@
 {
-    "editor.fontSize": 18,
-    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
-    "editor.tabSize": 2,
-    "editor.renderWhitespace": "boundary",
-    "workbench.statusBar.feedback.visible": false,
-    "files.insertFinalNewline": true,
-    "editor.renderControlCharacters": true,
-    "workbench.editor.enablePreview": false,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true
-    },
-    "typescript.updateImportsOnFileMove.enabled": "never",
-    "eslint.autoFixOnSave": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        {
-            "language": "typescript",
-            "autoFix": true
-        },
-        {
-            "language": "typescriptreact",
-            "autoFix": true
-        }
-    ],
-    "emmet.showExpandedAbbreviation": "never",
-    "extensions.ignoreRecommendations": false
+  "editor.fontSize": 18,
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "editor.renderControlCharacters": true,
+  "workbench.editor.enablePreview": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "emmet.showExpandedAbbreviation": "never",
+  "extensions.ignoreRecommendations": false,
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh"
+    }
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "arduino.path": "/Applications",
+  "arduino.commandPath": "Contents/MacOS/Arduino"
 }
