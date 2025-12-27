@@ -1,2 +1,5 @@
 [aliases]
 ask = ["diff", "--git"]
+
+[ui]
+editor = "vi"
