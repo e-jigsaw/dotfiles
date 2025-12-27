@@ -1,206 +1,155 @@
-# color
-autoload -Uz colors
-colors
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# git
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '(%b)'
-zstyle ':vcs_info:*' actionformats '(%b|%a)'
-precmd () {
-  psvar=()
-  LANG=en_US.UTF-8 vcs_info
-  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-export GIT_EDITOR=vim
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-# prompt
-PROMPT="%F{green}[%D{%T}] %B%n@%m%b%f %F{yellow}%~ %1 %F{blue}%(v|%1v|)%f
-%F{magenta}✈%f "
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="fino-time"
 
-# show current directory on tab
-echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# display
-zstyle ':completion:*' list-separator '-->'
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# vi mode
-bindkey -v
-function zle-line-init zle-keymap-select {
-  vimode="${${KEYMAP/vicmd/NORMAL}/(main|viins)/INSERT}"
-  if [ -n "$TMUX" ]; then
-    if [ $vimode = "NORMAL" ]; then
-      modebg="colour45"
-      modefg="colour15"
-    else
-      modebg="colour202"
-      modefg="colour255"
-    fi
-    tmux set -g status-left "#[bg=${modebg}, fg=${modefg}] $vimode " > /dev/null
-  fi
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# alias
-alias g='git'
-alias gs='git st'
-alias ggr='git gr'
-alias git-branch-clean="git fetch --prune origin && git branch --merged origin/master | grep -vE ' master$|^\*' | xargs git branch -d"
-alias git-branch-clean-upstream="git fetch --prune upstream && git branch --merged upstream/master | grep -vE ' master$|^\*' | xargs git branch -d"
-alias ga='git add'
-alias gae='git add -p'
-alias ls='ls -G'
-alias la='ls -laG'
-alias nr='npm run'
-alias ni='npm install'
-alias ns='npm start'
-alias nt='npm test'
-alias h='heroku'
-alias bi='bundle install'
-alias be='bundle exec'
-alias gh='gh-open'
-alias up='cd ../'
-alias upp='cd ../../'
-alias o='open'
-alias t='tmux'
-alias d='docker'
-alias dc='docker-compose'
-alias y='yarn'
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-## global
-alias -g @l='| less'
-alias -g @p='| peco'
-alias -g @c='| pbcopy'
-alias -g @gb='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
-alias -g @gf='`git status --porcelain | peco | sed -e "s/^.. //g"`'
-alias -g @gl='`git log --oneline | peco | cut -d" " -f1`'
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
 
-## suffix
-alias -s ls='lsc'
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
-bindkey '^E^E' beginning-of-line
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# peco cd
-function _peco_cd() {
-  BUFFER="cd $(ghq list --full-path | peco)"
-  CURSOR=$#BUFFER
-  zle accept-line
-}
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-zle -N peco-cd _peco_cd
-bindkey '^F' peco-cd
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-# peco bck-i-search
-function peco-select-history() {
-  typeset tac
-  if which tac > /dev/null; then
-    tac=tac
-  else
-    tac='tail -r'
-  fi
-  BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
-  CURSOR=$#BUFFER
-}
-zle -N peco-select-history
-stty -ixon
-bindkey '^r' peco-select-history
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
 
-# git bind
-function _git_st() {
-  BUFFER="git status --branch --short"
-  CURSOR=$#BUFFER
-  zle accept-line
-}
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-zle -N git-st _git_st
-bindkey '^g^[[B' git-st
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
 
-# open bind
-function _open_atom() {
-  BUFFER="atom ."
-  CURSOR=$#BUFFER
-  zle accept-line
-}
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-zle -N open-atom _open_atom
-bindkey '^o^[[D' open-atom
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
 
-function _open_finder() {
-  BUFFER="open ."
-  CURSOR=$#BUFFER
-  zle accept-line
-}
-zle -N open-finder _open_finder
-bindkey '^o^f' open-finder
+source $ZSH/oh-my-zsh.sh
 
-function _open_tmux() {
-  BUFFER="tmux"
-  CURSOR=$#BUFFER
-  zle accept-line
-}
-zle -N open-tmux _open_tmux
-bindkey '^t' open-tmux
+# User configuration
 
-# nvm
-if [ -f $HOME/.nvm/nvm.sh ]; then
-  source ~/.nvm/nvm.sh
-  npm_dir=${NVM_PATH}_modules
-  export NODE_PATH=$npm_dir
-fi
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# go
-export GOPATH=~/dev
-export PATH=$PATH:~/dev/bin
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-# history
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
-setopt share_history
-setopt hist_ignore_all_dups
-setopt hist_save_nodups
-setopt hist_reduce_blanks
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-# node
-export PATH=$PATH:./node_modules/.bin
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias g="git"
+alias ga="git add"
+alias ggr="git gr"
+alias gs="git st"
+alias -g @c="| pbcopy"
+alias -g @l="| less"
+alias d="deno"
+alias p="pnpm"
+alias pr="pnpm run"
+alias pi="pnpm install"
+alias po="pnpm outdated"
+alias gsm="git switch m"
+alias gro="git rebase origin/m"
+alias b="bun"
+alias br="bun run"
 
-# util
-function cd() {
-  builtin cd $@ && ls -a && echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007";
-}
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# http://mimosa-pudica.net/zsh-incremental.html
-source ${HOME}/dev/src/github.com/e-jigsaw/dotfiles/incr*.zsh
+export GPG_TTY=$(tty)
 
-# https://github.com/zsh-users/zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="$HOME/.moon/bin:$PATH"
 
-# https://github.com/zsh-users/zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-if [ -f $(brew --prefix git)/share/zsh/site-functions/_git ]; then
-  fpath=($(brew --prefix git)/share/zsh/site-functions $fpath)
-fi
 
-# awscli
-if [ -f /usr/local/share/zsh/site-functions/_aws ]; then
-  source /usr/local/share/zsh/site-functions/_aws
-fi
+# bun completions
+[ -s "/Users/jigsaw/.bun/_bun" ] && source "/Users/jigsaw/.bun/_bun"
 
-# google-cloud-sdk
-if [ -f /usr/local/etc/google-cloud-sdk/path.zsh.inc ]; then
-  source /usr/local/etc/google-cloud-sdk/path.zsh.inc
-  source /usr/local/etc/google-cloud-sdk/completion.zsh.inc
-fi
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
-# comp
-autoload -Uz compinit && compinit -u
+# op
+export OP_BIOMETRIC_UNLOCK_ENABLED=true
 
-if [ -f ${HOME}/.zprofile ]; then
-  source ${HOME}/.zprofile
-fi
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/lib/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/lib/google-cloud-sdk/path.zsh.inc'; fi
 
-# direnv
-eval "$(direnv hook zsh)"
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/lib/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/lib/google-cloud-sdk/completion.zsh.inc'; fi
+
+PATH=~/.console-ninja/.bin:$PATH
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/Users/jigsaw/.cache/lm-studio/bin"
+
+# Golang environment variables
+export GOROOT=$(brew --prefix go)/libexec
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
+
+# Added by Antigravity
+export PATH="/Users/jigsaw/.antigravity/antigravity/bin:$PATH"
+
+eval "$(mise activate zsh)"
+

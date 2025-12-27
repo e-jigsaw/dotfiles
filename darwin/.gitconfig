@@ -1,7 +1,8 @@
 [user]
     name = jigsaw
     email = m@jgs.me
-    signingkey = F0B3B6EB
+    signingkey = B59B02AA2576074140579BDD206E53913DCF21B5
+
 [core]
     excludesfile = ~/.gitignore
 
@@ -25,23 +26,20 @@
     sb = submodule
     cp = cherry-pick
     unstage = reset
-
-[color]
-    ui = true
-    diff = true
-
-[credential]
-    helper = osxkeychain
+    re = rebase
+    fe = fetch
+    s = switch
 
 [ghq]
-    root = ~/dev/src
-[commit]
-    gpgsign = true
+	root = /Users/jigsaw/dev
 [gpg]
-	program = /usr/local/bin/gpg
-[pager]
-	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
-[diff]
-	compactionHeuristic = true
+	program = gpg
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = m
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

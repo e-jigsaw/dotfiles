@@ -1,0 +1,2 @@
+[aliases]
+ask = ["diff", "--git"]
