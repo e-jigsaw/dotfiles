@@ -1,5 +1,6 @@
 [aliases]
 ask = ["diff", "--git"]
+pull = ["git", "fetch"]
 
 [ui]
 editor = "vi"
