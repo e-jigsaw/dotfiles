@@ -153,3 +153,4 @@ export PATH="/Users/jigsaw/.antigravity/antigravity/bin:$PATH"
 
 eval "$(mise activate zsh)"
 
+eval "$(starship init zsh)"
