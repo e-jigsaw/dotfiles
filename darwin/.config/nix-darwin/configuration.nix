@@ -7,6 +7,30 @@
     ripgrep
     neofetch
     starship
+    ffmpeg
+    fzf
+    gemini-cli
+    ghq
+    git-lfs
+    gnused
+    gnupg
+    gnutls
+    go
+    kubernetes-helm
+    imagemagick
+    jujutsu
+    jq
+    mise
+    mysql80
+    nomad
+    pinentry_mac
+    rustc
+    cargo
+    stow
+    tailscale
+    unar
+    wget
+    yt-dlp
   ];
 
   # Necessary for using flakes on this system.
@@ -14,6 +38,9 @@
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # User configuration
   users.users.jigsaw = {
@@ -50,33 +77,8 @@
     onActivation.cleanup = "zap";
     taps = [
       "1password/tap"
-      "hashicorp/tap"
     ];
     brews = [
-      "gnutls"
-      "ffmpeg"
-      "fzf"
-      "gemini-cli"
-      "ghq"
-      "git"
-      "git-lfs"
-      "gnu-sed"
-      "gnupg"
-      "go"
-      "helm"
-      "imagemagick"
-      "jj"
-      "jq"
-      "mise"
-      "mysql"
-      "pinentry-mac"
-      "rust"
-      "stow"
-      "tailscale"
-      "unar"
-      "wget"
-      "youtube-dl"
-      "hashicorp/tap/nomad"
     ];
     casks = [
       "1password-cli"

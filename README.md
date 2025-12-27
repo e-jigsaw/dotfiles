@@ -24,7 +24,7 @@
 stow -v -t ~ darwin
 
 # for common settings (if exists)
-stow -v -t ~ common
+stow -v -t --dotfiles ~ common
 ```
 
 # Author

@@ -115,7 +115,10 @@ alias gro="git rebase origin/m"
 alias b="bun"
 alias br="bun run"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf
+if (( $+commands[fzf] )); then
+  source <(fzf --zsh)
+fi
 
 export GPG_TTY=$(tty)
 

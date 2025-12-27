@@ -4,3 +4,6 @@ pull = ["git", "fetch"]
 
 [ui]
 editor = "vi"
+
+[remotes.origin]
+auto-track-bookmarks = "glob:*"
