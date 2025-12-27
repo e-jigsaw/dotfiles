@@ -30,9 +30,13 @@ style = "bg:#076678 fg:white"
 format = "[$path]($style)[](fg:#076678 bg:#8f3f71)"
 
 [custom.jj]
-command = "jj log -r @ -n 1 --no-graph --template 'change_id.shortest(4)'"
+
+command = "jj log -r @ -n 1 --no-graph --template \"change_id.shortest(8) ++ '  ' ++ commit_id.shortest(8) ++ if(bookmarks, '  ' ++ bookmarks)\""
+
 detect_folders = [".jj"]
+
 style = "bg:#8f3f71 fg:white"
+
 format = "[$output]($style)[](fg:#8f3f71 bg:#665c54)"
 
 [time]
