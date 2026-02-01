@@ -122,9 +122,6 @@ fi
 
 export GPG_TTY=$(tty)
 
-export PATH="$HOME/.moon/bin:$PATH"
-
-
 # bun completions
 [ -s "/Users/jigsaw/.bun/_bun" ] && source "/Users/jigsaw/.bun/_bun"
 
@@ -141,15 +138,8 @@ if [ -f '/usr/local/lib/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/lib
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/lib/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/lib/google-cloud-sdk/completion.zsh.inc'; fi
 
-PATH=~/.console-ninja/.bin:$PATH
-
 # Added by LM Studio CLI tool (lms)
 export PATH="$PATH:/Users/jigsaw/.cache/lm-studio/bin"
-
-# Golang environment variables
-export GOROOT=$(brew --prefix go)/libexec
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
 
 # Added by Antigravity
 export PATH="/Users/jigsaw/.antigravity/antigravity/bin:$PATH"
@@ -157,3 +147,6 @@ export PATH="/Users/jigsaw/.antigravity/antigravity/bin:$PATH"
 eval "$(mise activate zsh)"
 
 eval "$(starship init zsh)"
+
+# Fix go: cannot find GOROOT directory error
+unset GOROOT
