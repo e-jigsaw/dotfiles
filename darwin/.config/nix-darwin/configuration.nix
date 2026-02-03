@@ -31,6 +31,7 @@
     unar
     wget
     yt-dlp
+    awscli2
   ];
 
   # Necessary for using flakes on this system.

@@ -25,7 +25,21 @@
 - **Deployment:**
   - 変更後は `stow -v -t ~ darwin` (または `common`) で適用することを意識する。
 
-## 4. Instructions
+## 4. Nix Configuration
+
+- **Status:** `nix-darwin` (Flakes enabled) is currently used for system configuration and package management alongside Homebrew.
+- **Location:** `darwin/.config/nix-darwin/`
+  - `flake.nix`: Entry point defining dependencies and inputs.
+  - `configuration.nix`: System-wide settings (packages, macOS defaults, Homebrew integration).
+- **Key Settings:**
+  - `nix.enable = false`: Determinate Systems installer handles the Nix daemon, so `nix-darwin` management is disabled to avoid conflicts.
+  - `homebrew.enable = true`: Integrates Homebrew management.
+- **Operation:**
+  - Apply changes: `darwin-rebuild switch --flake ~/.config/nix-darwin`
+  - Update inputs: `nix flake update` (inside `~/.config/nix-darwin`)
+  - Garbage collection: `nix-collect-garbage -d`
+
+## 5. Instructions
 
 - コード生成時は、まず `GEMINI.md` の内容を前提として理解すること。
 - 生成されたコードに不明点がある場合は、勝手に補完せず質問すること。
