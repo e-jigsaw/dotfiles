@@ -10,6 +10,7 @@
     ffmpeg
     fzf
     gemini-cli
+    gh
     ghq
     git-lfs
     gnused
