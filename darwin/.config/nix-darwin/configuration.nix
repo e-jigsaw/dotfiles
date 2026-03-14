@@ -33,6 +33,7 @@
     wget
     yt-dlp
     awscli2
+    claude
   ];
 
   # Necessary for using flakes on this system.
