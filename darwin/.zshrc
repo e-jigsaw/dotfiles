@@ -150,3 +150,5 @@ eval "$(starship init zsh)"
 
 # Fix go: cannot find GOROOT directory error
 unset GOROOT
+
+export PATH="$HOME/.local/bin:$PATH"
