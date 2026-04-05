@@ -5,7 +5,7 @@
     git
     vim
     ripgrep
-    neofetch
+    fastfetch
     starship
     ffmpeg
     fzf
@@ -29,11 +29,12 @@
     cargo
     stow
     tailscale
+    tmux
     unar
     wget
     yt-dlp
     awscli2
-    claude
+    poppler
   ];
 
   # Necessary for using flakes on this system.
