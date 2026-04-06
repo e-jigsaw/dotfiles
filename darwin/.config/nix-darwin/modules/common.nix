@@ -9,7 +9,6 @@
     fzf
     gemini-cli
     gh
-    ghq
     git-lfs
     gnused
     gnupg
@@ -21,7 +20,6 @@
     jq
     mise
     mysql80
-    nomad
     pinentry_mac
     rustc
     cargo
@@ -30,7 +28,6 @@
     tmux
     unar
     wget
-    yt-dlp
     awscli2
     poppler
   ];
@@ -69,11 +66,7 @@
     brews = [];
     casks = [
       "1password-cli"
-      "db-browser-for-sqlite"
       "ghostty"
-      "google-chrome"
-      "openscad"
-      "visual-studio-code"
     ];
   };
 }
