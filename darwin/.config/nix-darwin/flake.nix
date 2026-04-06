@@ -9,7 +9,8 @@
   {
     darwinConfigurations."JigsawStudio" = nix-darwin.lib.darwinSystem {
       modules = [
-        ./configuration.nix
+        ./modules/common.nix
+        ./hosts/JigsawStudio.nix
       ];
       specialArgs = { inherit self; };
     };
