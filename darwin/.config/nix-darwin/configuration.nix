@@ -87,6 +87,7 @@
     casks = [
       "1password-cli"
       "db-browser-for-sqlite"
+      "ghostty"
       "google-chrome"
       "openscad"
       "visual-studio-code"
