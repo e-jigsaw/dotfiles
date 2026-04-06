@@ -36,12 +36,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  users.users.jigsaw = {
-    name = "jigsaw";
-    home = "/Users/jigsaw";
-  };
-  system.primaryUser = "jigsaw";
-
   system.stateVersion = 5;
 
   nix.enable = false;
