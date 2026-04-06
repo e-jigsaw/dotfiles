@@ -14,5 +14,12 @@
       ];
       specialArgs = { inherit self; };
     };
+    darwinConfigurations."Iris" = nix-darwin.lib.darwinSystem {
+      modules = [
+        ./modules/common.nix
+        ./hosts/Iris.nix
+      ];
+      specialArgs = { inherit self; };
+    };
   };
 }
