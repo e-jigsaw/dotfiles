@@ -24,7 +24,7 @@
 stow -v -t ~ darwin
 
 # for common settings (if exists)
-stow -v -t --dotfiles ~ common
+stow -v -t ~ --dotfiles common
 ```
 
 ## tmux keybindings
