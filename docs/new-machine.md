@@ -32,6 +32,9 @@ cd ~/dev/github.com/e-jigsaw/dotfiles
 # nix-darwin の設定ファイルを先に配置する
 stow -v -t ~ darwin
 
+# Iris のみで必要な設定
+stow -v -t ~ darwin-iris
+
 # common 設定
 stow -v --dotfiles -t ~ common
 ```
