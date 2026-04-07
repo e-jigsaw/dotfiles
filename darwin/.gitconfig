@@ -1,7 +1,6 @@
 [user]
     name = jigsaw
     email = m@jgs.me
-    signingkey = B59B02AA2576074140579BDD206E53913DCF21B5
 
 [core]
     excludesfile = ~/.gitignore
@@ -44,3 +43,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[include]
+    path = ~/.gitconfig.local

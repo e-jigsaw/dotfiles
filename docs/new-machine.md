@@ -61,15 +61,33 @@ mise install deno@latest
 
 ## 7. GPG の設定
 
-署名鍵をインポートして pinentry-mac を設定する。
+新しいマシンでは新規に GPG 鍵を生成して使う。
 
 ```bash
-# 鍵のインポート (バックアップから)
-gpg --import /path/to/secret-key.asc
+# 鍵を生成
+gpg --gen-key
+
+# 生成した鍵の ID を確認
+gpg --list-secret-keys --keyid-format LONG
 
 # pinentry-mac を設定
 echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
 gpgconf --kill gpg-agent
+```
+
+生成した鍵 ID を `~/.gitconfig.local` に書く:
+
+```bash
+cat > ~/.gitconfig.local << 'EOF'
+[user]
+    signingkey = <鍵ID>
+EOF
+```
+
+GitHub にも公開鍵を登録する:
+
+```bash
+gpg --armor --export <鍵ID>  # 出力を GitHub の GPG Keys に登録
 ```
 
 ## 8. SSH 鍵の設定

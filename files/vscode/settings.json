@@ -1,0 +1,41 @@
+{
+  "editor.fontSize": 18,
+  "editor.fontFamily": "'Fira Code', 'Hack Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "workbench.editor.enablePreview": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "emmet.showExpandedAbbreviation": "never",
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.fontSize": 16,
+  "workbench.startupEditor": "newUntitledFile",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l", "-i"]
+    }
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.inlineSuggest.enabled": true,
+  "indentRainbow.colors": [
+    "rgba(132,24,224,0.6)",
+    "rgba(224,96,34,0.6)",
+    "rgba(218,224,34,0.6)",
+    "rgba(0,224,205,0.6)",
+    "rgba(34,142,224,0.6)",
+    "rgba(224,12,206,0.6)",
+    "rgba(224,148,34,0.6)",
+    "rgba(65,224,0,0.6)"
+  ],
+  "chat.agent.enabled": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "geminicodeassist.displayInlineContextHint": false
+}
