@@ -8,6 +8,8 @@
   system.primaryUser = "takaya.kobayashi";
 
   homebrew.casks = [
+    "gcloud-cli"
+    "karabiner-elements"
     "orbstack"
   ];
 }
