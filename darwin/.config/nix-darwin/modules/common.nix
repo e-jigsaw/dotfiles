@@ -30,6 +30,7 @@
     wget
     awscli2
     poppler
+    zoxide
   ];
 
   nix.settings.experimental-features = "nix-command flakes";

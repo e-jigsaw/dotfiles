@@ -148,6 +148,8 @@ eval "$(mise activate zsh)"
 
 eval "$(starship init zsh)"
 
+eval "$(zoxide init zsh)"
+
 # Fix go: cannot find GOROOT directory error
 unset GOROOT
 
