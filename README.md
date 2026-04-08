@@ -56,6 +56,7 @@ prefix: `C-b`
 | --- | ----------- |
 | prefix + s | セッション選択 |
 | prefix + w | ウィンドウツリー |
+| prefix + d | デタッチ |
 
 ### other
 
