@@ -42,7 +42,7 @@ nix-collect-garbage -d
 
 ### バージョン管理
 
-Git と jujutsu (jj) を並行して使用。`.gitconfig` で GPG 署名が強制されている (`commit.gpgsign = true`)。デフォルトブランチ名は `m` (master)。
+Git と jujutsu (jj) を並行して使用。`.gitconfig` で GPG 署名が強制されている (`commit.gpgsign = true`)。`init.defaultBranch` は `m` だが、このリポジトリのデフォルトブランチは `main`。
 
 ## スタック
 
