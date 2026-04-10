@@ -114,6 +114,7 @@ alias gsm="git switch m"
 alias gro="git rebase origin/m"
 alias b="bun"
 alias br="bun run"
+alias t="tmux"
 
 # fzf
 if (( $+commands[fzf] )); then
