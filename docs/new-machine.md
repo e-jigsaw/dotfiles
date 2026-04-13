@@ -78,11 +78,12 @@ echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
 gpgconf --kill gpg-agent
 ```
 
-生成した鍵 ID を `~/.gitconfig.local` に書く:
+生成した鍵 ID とマシンごとの email を `~/.gitconfig.local` に書く:
 
 ```bash
 cat > ~/.gitconfig.local << 'EOF'
 [user]
+    email = <このマシンで使うメールアドレス>
     signingkey = <鍵ID>
 EOF
 ```

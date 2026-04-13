@@ -1,6 +1,5 @@
 [user]
     name = jigsaw
-    email = m@jgs.me
 
 [core]
     excludesfile = ~/.gitignore
