@@ -19,7 +19,7 @@
     jujutsu
     jq
     mise
-    mysql80
+    mysql84
     pinentry_mac
     rustc
     cargo
