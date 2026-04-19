@@ -64,6 +64,47 @@ prefix: `C-b`
 | --- | ----------- |
 | prefix + r | 設定リロード |
 
+## yazi keybindings
+
+### navigation
+
+| key | description |
+| --- | ----------- |
+| h / j / k / l | 親/下/上/子 に移動 |
+| H / L | 履歴 戻る / 進む |
+| g g / G | 先頭 / 末尾 |
+| K / J | プレビューを上/下スクロール |
+
+### file ops
+
+| key | description |
+| --- | ----------- |
+| Space | 選択トグル |
+| y / x / p | yank / cut / paste |
+| d / D | ゴミ箱へ / 完全削除 |
+| a / r | 新規作成 / リネーム |
+| o / Enter | 開く |
+| ; / : | シェル実行 (ブロックなし / ブロック) |
+
+### jump / search / filter
+
+| key | description |
+| --- | ----------- |
+| z / Z | zoxide / fzf ジャンプ |
+| . | 隠しファイル表示トグル |
+| / / n | find / 次の find 候補 |
+| s / S | fd 検索 / rg 検索 |
+| f | filter |
+
+### tab / quit
+
+| key | description |
+| --- | ----------- |
+| t | 新規タブ |
+| [ / ] | 前/次のタブ |
+| 1-9 | タブ切替 |
+| q / Q | cwd 反映して終了 / 反映せず終了 |
+
 # Author
 
 - jigsaw(http://jgs.me)

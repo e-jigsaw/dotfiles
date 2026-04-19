@@ -30,6 +30,7 @@
     wget
     awscli2
     poppler
+    yazi
     zoxide
   ];
 
