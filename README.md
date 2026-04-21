@@ -14,19 +14,6 @@
 | @p    | pipe peco   |
 | @c    | pipe pbcopy |
 
-# Installation
-
-1. Install [GNU Stow](https://www.gnu.org/software/stow/).
-2. Apply dotfiles for your environment:
-
-```bash
-# for macOS
-stow -v -t ~ darwin
-
-# for common settings (if exists)
-stow -v -t ~ --dotfiles common
-```
-
 ## tmux keybindings
 
 prefix: `C-b`
@@ -105,9 +92,22 @@ prefix: `C-b`
 | 1-9 | タブ切替 |
 | q / Q | cwd 反映して終了 / 反映せず終了 |
 
+# Installation
+
+1. Install [GNU Stow](https://www.gnu.org/software/stow/).
+2. Apply dotfiles for your environment:
+
+```bash
+# for macOS
+stow -v -t ~ darwin
+
+# for common settings (if exists)
+stow -v -t ~ --dotfiles common
+```
+
 # Author
 
-- jigsaw(http://jgs.me)
+- jigsaw (https://jgs.me)
 
 # License
 
