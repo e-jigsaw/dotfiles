@@ -29,7 +29,7 @@
     unar
     wget
     awscli2
-    poppler
+    poppler-utils
     yazi
     zoxide
   ];
