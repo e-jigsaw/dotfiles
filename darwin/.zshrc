@@ -116,6 +116,8 @@ alias b="bun"
 alias br="bun run"
 alias t="tmux"
 alias y="yazi"
+alias c="claude"
+tk() { tmux kill-session -t "$@" }
 
 # fzf
 if (( $+commands[fzf] )); then
