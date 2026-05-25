@@ -8,6 +8,7 @@
   system.primaryUser = "jigsaw";
 
   environment.systemPackages = with pkgs; [
+    asciinema
     ghq
     nomad
     vhs
