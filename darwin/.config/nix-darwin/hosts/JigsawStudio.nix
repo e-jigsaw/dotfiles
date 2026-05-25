@@ -9,6 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     asciinema
+    asciinema-agg
     ghq
     nomad
     vhs
