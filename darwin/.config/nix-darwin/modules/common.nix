@@ -23,6 +23,7 @@
     pinentry_mac
     rustc
     cargo
+    clippy
     stow
     tailscale
     tmux
