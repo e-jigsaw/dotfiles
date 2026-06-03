@@ -158,3 +158,24 @@ eval "$(zoxide init zsh)"
 unset GOROOT
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# OpenViking claude-code memory plugin: inject ovcli.conf into the claude
+# process tree only (avoids exporting the API key to every child process).
+# See https://github.com/volcengine/OpenViking/blob/main/examples/claude-code-memory-plugin/README.md#configuring-mcp
+claude() {
+  local _ov_conf="${OPENVIKING_CLI_CONFIG_FILE:-$HOME/.openviking/ovcli.conf}"
+  if [ -f "$_ov_conf" ] && command -v jq >/dev/null 2>&1; then
+    local _ov_url _ov_key
+    _ov_url=$(jq -r '.url // empty'     "$_ov_conf" 2>/dev/null)
+    _ov_key=$(jq -r '.api_key // empty' "$_ov_conf" 2>/dev/null)
+    OPENVIKING_URL="${OPENVIKING_URL:-$_ov_url}" \
+    OPENVIKING_API_KEY="${OPENVIKING_API_KEY:-$_ov_key}" \
+      command claude "$@"
+  else
+    command claude "$@"
+  fi
+}
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/jigsaw/.local/bin:$PATH"
