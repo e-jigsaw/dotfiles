@@ -1,7 +1,6 @@
 { pkgs, self, ... }: {
   environment.systemPackages = with pkgs; [
     git
-    vim
     ripgrep
     fastfetch
     starship
@@ -56,7 +55,11 @@
 
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap";
+    onActivation = {
+      cleanup = "zap";
+      # Homebrew 5.x は --cleanup に確認ガードを要求するため非対話で飛ばす
+      extraFlags = [ "--force-cleanup" ];
+    };
     taps = [
       "1password/tap"
     ];
