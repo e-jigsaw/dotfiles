@@ -27,30 +27,6 @@ grammar は **Nix 側で宣言してビルド済みを同梱**する。リモー
 - **補完**: blink.cmp
 - **UI/操作**: telescope (+ ripgrep, fd), neo-tree, lualine, gitsigns, catppuccin (mocha)
 
-## キーバインド (cheat sheet)
-
-leader は `<Space>`。
-
-| キー | 動作 |
-| --- | --- |
-| `<Space>ff` | ファイル名でファジー検索 (Telescope) |
-| `<Space>fg` | プロジェクト全体を grep (live grep) |
-| `<Space>fb` | バッファ一覧 |
-| `<Space>e` | ファイルツリー開閉 (neo-tree) |
-| `<Space>w` / `<Space>q` | 保存 / 閉じる |
-| `<Esc>` | 検索ハイライト消す |
-| `gd` | 定義へジャンプ |
-| `gr` | 参照一覧 |
-| `K` | ホバー (型・doc) |
-| `<Space>rn` | リネーム |
-| `<Space>ca` | コードアクション |
-| `[d` / `]d` | 前 / 次の診断へ |
-
-補完 (blink.cmp, preset `default`): `<C-n>`/`<C-p>` 候補移動・`<C-y>` 確定 (Enter ではない)・`<C-space>` 手動展開・`<C-e>` 閉じる。
-
-その他: ヤンクはシステムクリップボード直結 (ssh 時は OSC52)、行番号ハイブリッド、undo 永続化。
-`:LspInfo` でアタッチ確認、`:Telescope keymaps` でキーマップ一覧 (which-key は未導入)。
-
 ## ローカル (Mac / nix-darwin)
 
 `../flake.nix` の各 host に組み込み済み (`modules/neovim.nix` が `systemPackages` に追加)。
