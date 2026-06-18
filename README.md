@@ -141,6 +141,25 @@ stow -v -t ~ darwin
 stow -v -t ~ --dotfiles common
 ```
 
+   Or via make (stow + vscode + claude-skills):
+
+```bash
+make install
+```
+
+# nix-darwin
+
+```bash
+# nix flake inputs を更新 (flake.lock)
+make update
+
+# 設定を適用 (sudo darwin-rebuild switch)。
+#   LocalHostName が flake の構成名と一致すればそれを自動適用、
+#   一致しなければ select メニューで選ぶ。HOST=<name> で明示指定も可。
+make switch
+make switch HOST=Iris
+```
+
 # Author
 
 - jigsaw (https://jgs.me)
