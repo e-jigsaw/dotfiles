@@ -3,7 +3,8 @@
   plugins.blink-cmp = {
     enable = true;
     settings = {
-      keymap.preset = "default";
+      # super-tab: Tab で選択中の候補を確定 (default は C-y 確定 / Tab はスニペット用)
+      keymap.preset = "super-tab";
       sources.default = [ "lsp" "path" "snippets" "buffer" ];
       completion.documentation.auto_show = true;
     };

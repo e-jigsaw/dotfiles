@@ -125,7 +125,8 @@ leader: `Space`
 | Space + w / Space + q | 保存 / 閉じる |
 | Esc | 検索ハイライト消す |
 | C-n / C-p | 補完候補 移動 |
-| C-y | 補完確定 (Enter ではない) |
+| Tab | 選択中の候補を確定 |
+| C-y | 補完確定 (Tab と同じ) |
 | C-space / C-e | 補完を手動展開 / 閉じる |
 
 # Installation
