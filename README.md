@@ -94,7 +94,7 @@ prefix: `C-b`
 
 ## neovim keybindings
 
-[darwin/.config/nix-darwin/nvim/README.md](https://github.com/e-jigsaw/dotfiles/blob/main/darwin/.config/nix-darwin/nvim/README.md))
+[darwin/.config/nix-darwin/nvim/README.md](https://github.com/e-jigsaw/dotfiles/blob/main/darwin/.config/nix-darwin/nvim/README.md)
 
 leader: `Space`
 
