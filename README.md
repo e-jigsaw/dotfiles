@@ -94,7 +94,9 @@ prefix: `C-b`
 
 ## neovim keybindings
 
-nixvim 管理 (詳細は `darwin/.config/nix-darwin/nvim/README.md`)。leader: `Space`
+[darwin/.config/nix-darwin/nvim/README.md](https://github.com/e-jigsaw/dotfiles/blob/main/darwin/.config/nix-darwin/nvim/README.md))
+
+leader: `Space`
 
 ### find / file tree
 
