@@ -92,6 +92,40 @@ prefix: `C-b`
 | 1-9 | タブ切替 |
 | q / Q | cwd 反映して終了 / 反映せず終了 |
 
+## neovim keybindings
+
+nixvim 管理 (詳細は `darwin/.config/nix-darwin/nvim/README.md`)。leader: `Space`
+
+### find / file tree
+
+| key | description |
+| --- | ----------- |
+| Space + f f | ファイル名でファジー検索 |
+| Space + f g | プロジェクト全体を grep |
+| Space + f b | バッファ一覧 |
+| Space + e | ファイルツリー開閉 (neo-tree) |
+
+### LSP
+
+| key | description |
+| --- | ----------- |
+| g d | 定義へジャンプ |
+| g r | 参照一覧 |
+| K | ホバー (型・doc) |
+| Space + r n | リネーム |
+| Space + c a | コードアクション |
+| [d / ]d | 前/次の診断へ |
+
+### edit / completion
+
+| key | description |
+| --- | ----------- |
+| Space + w / Space + q | 保存 / 閉じる |
+| Esc | 検索ハイライト消す |
+| C-n / C-p | 補完候補 移動 |
+| C-y | 補完確定 (Enter ではない) |
+| C-space / C-e | 補完を手動展開 / 閉じる |
+
 # Installation
 
 1. Install [GNU Stow](https://www.gnu.org/software/stow/).
