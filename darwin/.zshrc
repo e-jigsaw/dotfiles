@@ -2,7 +2,16 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# nix-darwin (systemPackages の oh-my-zsh) で管理。手動 ~/.oh-my-zsh が在ればそちらを優先。
+if [ -d "$HOME/.oh-my-zsh" ]; then
+  export ZSH="$HOME/.oh-my-zsh"
+else
+  export ZSH="/run/current-system/sw/share/oh-my-zsh"
+fi
+# store パスは read-only なので自動更新を無効化し、cache は書き込み可能な場所へ逃がす
+export DISABLE_AUTO_UPDATE=true
+export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
+[ -d "$ZSH_CACHE_DIR" ] || mkdir -p "$ZSH_CACHE_DIR"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

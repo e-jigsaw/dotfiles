@@ -19,6 +19,7 @@
     jq
     mise
     mysql84
+    oh-my-zsh
     pinentry_mac
     rustc
     cargo
@@ -33,6 +34,10 @@
     yazi
     zoxide
   ];
+
+  # oh-my-zsh は share/oh-my-zsh 配下のみ持つので pathsToLink に足さないと
+  # systemPackages に入れても /run/current-system/sw に展開されない
+  environment.pathsToLink = [ "/share/oh-my-zsh" ];
 
   nix.settings.experimental-features = "nix-command flakes";
 
