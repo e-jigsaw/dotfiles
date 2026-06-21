@@ -30,6 +30,14 @@
       ];
       specialArgs = { inherit self; nvim = mkNvim "aarch64-darwin"; };
     };
+    darwinConfigurations."JigsawMini" = nix-darwin.lib.darwinSystem {
+      modules = [
+        ./modules/common.nix
+        ./modules/neovim.nix
+        ./hosts/JigsawMini.nix
+      ];
+      specialArgs = { inherit self; nvim = mkNvim "aarch64-darwin"; };
+    };
     darwinConfigurations."Iris" = nix-darwin.lib.darwinSystem {
       modules = [
         ./modules/common.nix
