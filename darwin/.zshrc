@@ -122,6 +122,7 @@ alias br="bun run"
 alias t="tmux"
 alias y="yazi"
 alias c="claude"
+alias mt="mise trust"
 tk() { tmux kill-session -t "$@" }
 
 # fzf
