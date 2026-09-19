@@ -7,8 +7,11 @@
     # nixpkgs-unstable を使うので nixvim も unstable 追従の main に合わせる
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # herdr は公式 flake がソースビルドを提供している。リリースタグで固定する
+    herdr.url = "github:herdrdev/herdr/v0.9.1";
+    herdr.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nixvim }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nixvim, herdr }:
   let
     # nixvim ベースの Neovim パッケージを system ごとにビルドする
     mkNvim = system:
@@ -20,6 +23,8 @@
     # standalone 配布対象 (Mac + リモート Linux)
     nvimSystems = [ "aarch64-darwin" "x86_64-darwin" "x86_64-linux" "aarch64-linux" ];
     forNvimSystems = nixpkgs.lib.genAttrs nvimSystems;
+
+    herdrPkg = herdr.packages."aarch64-darwin".default;
   in
   {
     darwinConfigurations."JigsawStudio" = nix-darwin.lib.darwinSystem {
@@ -28,7 +33,7 @@
         ./modules/neovim.nix
         ./hosts/JigsawStudio.nix
       ];
-      specialArgs = { inherit self; nvim = mkNvim "aarch64-darwin"; };
+      specialArgs = { inherit self; nvim = mkNvim "aarch64-darwin"; herdr = herdrPkg; };
     };
     darwinConfigurations."JigsawMini" = nix-darwin.lib.darwinSystem {
       modules = [
