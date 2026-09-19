@@ -62,7 +62,9 @@
     enable = true;
     onActivation = {
       cleanup = "zap";
-      # Homebrew 5.x は --cleanup に確認ガードを要求するため非対話で飛ばす
+      # 非対話の activation で cleanup を走らせるには force が要る
+      # (brew 6.x は --cleanup に --force/--force-cleanup/$HOMEBREW_ASK を要求。
+      #  HOMEBREW_ASK は対話確認なので switch では使えない)
       extraFlags = [ "--force-cleanup" ];
     };
     taps = [
