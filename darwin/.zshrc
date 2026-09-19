@@ -185,3 +185,12 @@ claude() {
 
 # Added by Antigravity CLI installer
 export PATH="/Users/jigsaw/.local/bin:$PATH"
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<
+
+# kimi-code
+export PATH="/Users/jigsaw/.kimi-code/bin:$PATH"
