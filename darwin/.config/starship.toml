@@ -6,7 +6,8 @@ format = """
 $hostname\
 $directory\
 [](fg:#076678 bg:#8f3f71)\
-${custom.jj}\
+$git_branch\
+$git_status\
 [](fg:#8f3f71 bg:#665c54)\
 $time\
 $cmd_duration
@@ -31,11 +32,14 @@ truncation_symbol = "…/"
 style = "bg:#076678 fg:white"
 format = "[$path]($style)"
 
-[custom.jj]
-command = "jj log -r @ -n 1 --no-graph --template \"change_id.shortest(8) ++ '  ' ++ commit_id.shortest(8) ++ if(bookmarks, '  ' ++ bookmarks)\""
-detect_folders = [".jj"]
+[git_branch]
+symbol = " "
 style = "bg:#8f3f71 fg:white"
-format = "[$output]($style)"
+format = "[$symbol$branch]($style)"
+
+[git_status]
+style = "bg:#8f3f71 fg:white"
+format = "([ $all_status$ahead_behind]($style))"
 
 [time]
 disabled = false
