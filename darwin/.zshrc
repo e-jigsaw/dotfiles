@@ -110,7 +110,6 @@ alias ggr="git gr"
 alias gs="git st"
 alias -g @c="| pbcopy"
 alias -g @l="| less"
-alias d="deno"
 alias p="pnpm"
 alias pr="pnpm run"
 alias pi="pnpm install"
@@ -120,10 +119,23 @@ alias gro="git rebase origin/m"
 alias b="bun"
 alias br="bun run"
 alias t="tmux"
-alias y="yazi"
 alias c="claude"
 alias mt="mise trust"
+alias cx="codex"
 tk() { tmux kill-session -t "$@" }
+
+# herdr (h m l → herdr machine list)
+h() {
+  local -A sub=(t tab p pane wt worktree s session m machine)
+  local -A act=(a attach c create l list f focus r rename rm remove x close)
+  if [[ -n ${sub[$1]} ]]; then
+    local s=${sub[$1]}; shift
+    [[ -n ${act[$1]} ]] && set -- ${act[$1]} "${@:2}"
+    herdr $s "$@"
+  else
+    herdr "$@"
+  fi
+}
 
 # fzf
 if (( $+commands[fzf] )); then

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, herdr, ... }: {
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   users.users.jigsaw = {
@@ -14,6 +14,8 @@
     nomad
     vhs
     yt-dlp
+    # flake input (github:herdrdev/herdr) から渡される
+    herdr
   ];
 
   homebrew.casks = [
