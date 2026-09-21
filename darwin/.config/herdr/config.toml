@@ -1,8 +1,6 @@
 onboarding = false
 
-# キーバインド (デフォルトから変えるものだけ書く)
 [keys]
-# tmux に合わせる (デフォルトは prefix+q)
 detach = "prefix+d"
 
 [theme]
