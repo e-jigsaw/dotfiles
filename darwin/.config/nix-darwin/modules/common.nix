@@ -17,7 +17,6 @@
     imagemagick
     jujutsu
     jq
-    mise
     mysql84
     oh-my-zsh
     pinentry_mac
@@ -62,15 +61,13 @@
     enable = true;
     onActivation = {
       cleanup = "zap";
-      # 非対話の activation で cleanup を走らせるには force が要る
-      # (brew 6.x は --cleanup に --force/--force-cleanup/$HOMEBREW_ASK を要求。
-      #  HOMEBREW_ASK は対話確認なので switch では使えない)
-      extraFlags = [ "--force-cleanup" ];
     };
     taps = [
       "1password/tap"
     ];
-    brews = [];
+    brews = [
+      "mise"
+    ];
     casks = [
       "1password-cli"
       "ghostty"
