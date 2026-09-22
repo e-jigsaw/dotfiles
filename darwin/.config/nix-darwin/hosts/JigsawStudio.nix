@@ -16,6 +16,11 @@
     yt-dlp
     # flake input (github:herdrdev/herdr) から渡される
     herdr
+    # pi-coding-agent の bin/pi は zsh の alias pi (pnpm install) と被るので tau として置く
+    (runCommand "tau" { } ''
+      mkdir -p $out/bin
+      ln -s ${pi-coding-agent}/bin/pi $out/bin/tau
+    '')
   ];
 
   homebrew.casks = [
