@@ -1,8 +1,8 @@
 # dotfiles
 
-# Usage
+## Usage
 
-## zsh aliases
+### zsh aliases
 
 | alias | description |
 | ----- | ----------- |
@@ -14,50 +14,60 @@
 | @p    | pipe peco   |
 | @c    | pipe pbcopy |
 
-## tmux keybindings
+### herdr keybindings
 
-prefix: `C-b`
+prefix: `Ctrl-b`。`Shift` は大文字キーを表す。
 
-### pane
+#### pane
 
 | key | description |
 | --- | ----------- |
-| prefix + \| | 横分割 |
-| prefix + - | 縦分割 |
-| prefix + h/j/k/l | pane 移動 |
-| prefix + H/J/K/L | pane リサイズ |
+| prefix + v | 右に分割 |
+| prefix + - | 下に分割 |
+| prefix + h/j/k/l | 左/下/上/右の pane に移動 |
+| prefix + Shift-h/j/k/l | 左/下/上/右の pane と入れ替え |
+| prefix + r | リサイズモード |
 | prefix + z | pane 最大化トグル |
-| prefix + x | pane を閉じる（確認あり） |
+| prefix + x | pane を閉じる |
+| prefix + [ | コピーモード |
 
-### window
-
-| key | description |
-| --- | ----------- |
-| prefix + c | 新規ウィンドウ |
-| prefix + & | ウィンドウを閉じる |
-| S-Left / S-Right | 前/次のウィンドウ |
-
-### session
+#### tab
 
 | key | description |
 | --- | ----------- |
-| prefix + s | セッション選択 |
-| prefix + w | ウィンドウツリー |
-| prefix + d | デタッチ |
+| prefix + c | 新規タブ |
+| prefix + p / prefix + n | 前/次のタブ |
+| prefix + 1..9 | タブ 1–9 に移動 |
+| prefix + Shift-t | タブ名を変更 |
+| prefix + Shift-x | タブを閉じる |
 
-### other
+#### workspace / session
 
 | key | description |
 | --- | ----------- |
-| prefix + r | 設定リロード |
+| prefix + w | ワークスペースナビゲーション |
+| prefix + Shift-n | 新規ワークスペース |
+| prefix + Shift-w | ワークスペース名を変更 |
+| prefix + Shift-d | ワークスペースを閉じる |
+| prefix + g | Goto ピッカー |
+| prefix + b | サイドバー表示切り替え |
+| prefix + d | デタッチ（プロセスは維持） |
 
-## neovim keybindings
+#### other
 
-[darwin/.config/nix-darwin/nvim/README.md](https://github.com/e-jigsaw/dotfiles/blob/main/darwin/.config/nix-darwin/nvim/README.md)
+| key | description |
+| --- | ----------- |
+| prefix + ? | 有効なキーバインドのヘルプ |
+| prefix + s | 設定を開く |
+| prefix + Shift-r | 設定リロード |
+
+### neovim keybindings
+
+[詳細な設定とキーバインド](darwin/.config/nix-darwin/nvim/README.md)
 
 leader: `Space`
 
-### find / file tree
+#### find / file tree
 
 | key | description |
 | --- | ----------- |
@@ -66,7 +76,7 @@ leader: `Space`
 | Space + f b | バッファ一覧 |
 | Space + e | ファイルツリー開閉 (neo-tree) |
 
-### LSP
+#### LSP
 
 | key | description |
 | --- | ----------- |
@@ -77,7 +87,7 @@ leader: `Space`
 | Space + c a | コードアクション |
 | [d / ]d | 前/次の診断へ |
 
-### edit / completion
+#### edit / completion
 
 | key | description |
 | --- | ----------- |
@@ -88,7 +98,7 @@ leader: `Space`
 | C-y | 補完確定 (Tab と同じ) |
 | C-space / C-e | 補完を手動展開 / 閉じる |
 
-# Installation
+## Installation
 
 1. Install [GNU Stow](https://www.gnu.org/software/stow/).
 2. Apply dotfiles for your environment:
@@ -97,17 +107,17 @@ leader: `Space`
 # for macOS
 stow -v -t ~ darwin
 
-# for common settings (if exists)
+# for common settings
 stow -v -t ~ --dotfiles common
 ```
 
-   Or via make (stow + vscode + claude-skills):
+Or via make (stow + vscode + claude-skills):
 
 ```bash
 make install
 ```
 
-# nix-darwin
+## nix-darwin
 
 ```bash
 # nix flake inputs を更新 (flake.lock)
@@ -120,10 +130,10 @@ make switch
 make switch HOST=Iris
 ```
 
-# Author
+## Author
 
 - jigsaw (https://jgs.me)
 
-# License
+## License
 
 MIT
