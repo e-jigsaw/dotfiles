@@ -16,9 +16,7 @@
 
 ### herdr keybindings
 
-prefix: `Ctrl-b`（押して離してから次のキーを入力）。`Shift` は大文字キーを表す。
-
-[herdr v0.9.1 のデフォルト](https://github.com/herdrdev/herdr/blob/v0.9.1/src/config/model.rs)を使用し、[ローカル設定](darwin/.config/herdr/config.toml)でデタッチだけ `prefix + d` に変更している。
+prefix: `Ctrl-b`。`Shift` は大文字キーを表す。
 
 #### pane
 
