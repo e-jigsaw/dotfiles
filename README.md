@@ -1,37 +1,5 @@
 # dotfiles
 
-## Installation
-
-1. Install [GNU Stow](https://www.gnu.org/software/stow/).
-2. Apply dotfiles for your environment:
-
-```bash
-# for macOS
-stow -v -t ~ darwin
-
-# for common settings
-stow -v -t ~ --dotfiles common
-```
-
-Or via make (stow + vscode + claude-skills):
-
-```bash
-make install
-```
-
-## nix-darwin
-
-```bash
-# nix flake inputs を更新 (flake.lock)
-make update
-
-# 設定を適用 (sudo darwin-rebuild switch)。
-#   LocalHostName が flake の構成名と一致すればそれを自動適用、
-#   一致しなければ select メニューで選ぶ。HOST=<name> で明示指定も可。
-make switch
-make switch HOST=Iris
-```
-
 ## Usage
 
 ### zsh aliases
@@ -131,6 +99,38 @@ leader: `Space`
 | Tab | 選択中の候補を確定 |
 | C-y | 補完確定 (Tab と同じ) |
 | C-space / C-e | 補完を手動展開 / 閉じる |
+
+## Installation
+
+1. Install [GNU Stow](https://www.gnu.org/software/stow/).
+2. Apply dotfiles for your environment:
+
+```bash
+# for macOS
+stow -v -t ~ darwin
+
+# for common settings
+stow -v -t ~ --dotfiles common
+```
+
+Or via make (stow + vscode + claude-skills):
+
+```bash
+make install
+```
+
+## nix-darwin
+
+```bash
+# nix flake inputs を更新 (flake.lock)
+make update
+
+# 設定を適用 (sudo darwin-rebuild switch)。
+#   LocalHostName が flake の構成名と一致すればそれを自動適用、
+#   一致しなければ select メニューで選ぶ。HOST=<name> で明示指定も可。
+make switch
+make switch HOST=Iris
+```
 
 ## Author
 
