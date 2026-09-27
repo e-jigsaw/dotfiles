@@ -1,6 +1,9 @@
 add_newline = false
 command_timeout = 1000
 
+# user_bg / host_bg は .zshrc が jigsaw / JigsawStudio の時に差し替える
+palette = "base"
+
 format = """
 ╭─$username\
 $hostname\
@@ -15,14 +18,14 @@ $cmd_duration
 
 [username]
 show_always = true
-style_user = "bg:#af3a03 fg:white"
+style_user = "bg:user_bg fg:white"
 style_root = "bg:#cc241d fg:white"
-format = "[](fg:#af3a03)[$user]($style)[](fg:#af3a03 bg:#9d6a06)"
+format = "[](fg:user_bg)[$user]($style)[](fg:user_bg bg:host_bg)"
 
 [hostname]
 ssh_only = false
-style = "bg:#9d6a06 fg:white"
-format = "[$hostname]($style)[](fg:#9d6a06 bg:#076678)"
+style = "bg:host_bg fg:white"
+format = "[$hostname]($style)[](fg:host_bg bg:#076678)"
 trim_at = "."
 disabled = false
 
@@ -50,3 +53,7 @@ format = "[$time]($style)[](fg:#665c54)"
 [character]
 success_symbol = "[⠠⠵](bold green)"
 error_symbol = "[⠠⠵](bold red)"
+
+[palettes.base]
+user_bg = "#af3a03"
+host_bg = "#9d6a06"
