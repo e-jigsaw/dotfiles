@@ -168,6 +168,21 @@ export PATH="/Users/jigsaw/.antigravity/antigravity/bin:$PATH"
 
 eval "$(mise activate zsh)"
 
+# starship: jigsaw / JigsawStudio の時は user / host の bg を差し替えた config を使う
+() {
+  local src=$HOME/.config/starship.toml
+  local -a expr
+  [[ $USER == jigsaw ]] && expr+=(-e 's/^user_bg = .*/user_bg = "#79740e"/')
+  [[ ${HOST%%.*} == JigsawStudio ]] && expr+=(-e 's/^host_bg = .*/host_bg = "#427b58"/')
+  (( $#expr )) || return
+  local dst=${XDG_CACHE_HOME:-$HOME/.cache}/starship/config-$USER-${HOST%%.*}.toml
+  if [[ ! -f $dst || $src -nt $dst ]]; then
+    mkdir -p ${dst:h}
+    sed "${expr[@]}" $src > $dst.$$ && mv $dst.$$ $dst
+  fi
+  export STARSHIP_CONFIG=$dst
+}
+
 eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh)"
