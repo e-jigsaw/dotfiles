@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, qmd, ... }: {
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   users.users."takaya.kobayashi" = {
@@ -8,6 +8,7 @@
   system.primaryUser = "takaya.kobayashi";
 
   environment.systemPackages = [
+    qmd
     (pkgs.callPackage ../packages/tau.nix { })
   ];
 
