@@ -10,8 +10,11 @@
     # herdr は公式 flake がソースビルドを提供している。リリースタグで固定する
     herdr.url = "github:herdrdev/herdr/v0.9.1";
     herdr.inputs.nixpkgs.follows = "nixpkgs";
+    # qmd は公式 flake をリリースタグで固定し、Iris のみに導入する
+    qmd.url = "github:tobi/qmd/v2.8.3";
+    qmd.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nixvim, herdr }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nixvim, herdr, qmd }:
   let
     # nixvim ベースの Neovim パッケージを system ごとにビルドする
     mkNvim = system:
@@ -49,7 +52,11 @@
         ./modules/neovim.nix
         ./hosts/Iris.nix
       ];
-      specialArgs = { inherit self; nvim = mkNvim "aarch64-darwin"; };
+      specialArgs = {
+        inherit self;
+        nvim = mkNvim "aarch64-darwin";
+        qmd = qmd.packages."aarch64-darwin".default;
+      };
     };
 
     # `nix run github:e-jigsaw/dotfiles?dir=darwin/.config/nix-darwin#nvim` でリモートへ撒く
