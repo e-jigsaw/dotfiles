@@ -9,6 +9,7 @@ format = """
 $hostname\
 $directory\
 [](fg:#076678 bg:#8f3f71)\
+${custom.worktree}\
 $git_branch\
 $git_status\
 [](fg:#8f3f71 bg:#665c54)\
@@ -39,6 +40,17 @@ format = "[$path]($style)"
 symbol = " "
 style = "bg:#8f3f71 fg:white"
 format = "[$symbol$branch]($style)"
+
+[custom.worktree]
+description = "Linked Git worktree"
+require_repo = true
+when = '''
+test "$(git rev-parse --path-format=absolute --git-dir)" != \
+     "$(git rev-parse --path-format=absolute --git-common-dir)"
+'''
+symbol = "󰙅"
+style = "bg:#8f3f71 fg:yellow"
+format = "[ $symbol]($style)"
 
 [git_status]
 style = "bg:#8f3f71 fg:white"
