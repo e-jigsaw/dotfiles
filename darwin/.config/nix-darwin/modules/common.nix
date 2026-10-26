@@ -12,7 +12,7 @@
     gnused
     gnupg
     gnutls
-    go
+    go_1_27
     kubernetes-helm
     imagemagick
     jujutsu
