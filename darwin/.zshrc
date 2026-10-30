@@ -226,3 +226,8 @@ autoload -Uz compinit && compinit -C
 
 # kimi-code
 export PATH="/Users/jigsaw/.kimi-code/bin:$PATH"
+
+# Rex: put the server's rex first on PATH (keep this at the end)
+if [ -n "$REX_BIN_DIR" ]; then
+    export PATH="$REX_BIN_DIR:$PATH"
+fi
