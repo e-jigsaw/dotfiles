@@ -209,6 +209,11 @@ claude() {
   fi
 }
 
+tau() {
+  PHOENIX_COLLECTOR_ENDPOINT="${PHOENIX_COLLECTOR_ENDPOINT:-http://192.168.1.108:4318}" \
+  PI_PHOENIX_PROJECT="${PI_PHOENIX_PROJECT:-pi}" \
+    command tau "$@"
+}
 
 # Added by Antigravity CLI installer
 export PATH="/Users/jigsaw/.local/bin:$PATH"
