@@ -187,8 +187,8 @@ eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh)"
 
-# Fix go: cannot find GOROOT directory error
-unset GOROOT
+# Go: go install の配置先
+export PATH="$HOME/go/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
