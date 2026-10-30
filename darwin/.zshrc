@@ -187,8 +187,8 @@ eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh)"
 
-# Fix go: cannot find GOROOT directory error
-unset GOROOT
+# Go: go install の配置先
+export PATH="$HOME/go/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -209,6 +209,11 @@ claude() {
   fi
 }
 
+tau() {
+  PHOENIX_COLLECTOR_ENDPOINT="${PHOENIX_COLLECTOR_ENDPOINT:-http://192.168.1.108:4318}" \
+  PI_PHOENIX_PROJECT="${PI_PHOENIX_PROJECT:-pi}" \
+    command tau "$@"
+}
 
 # Added by Antigravity CLI installer
 export PATH="/Users/jigsaw/.local/bin:$PATH"
@@ -221,3 +226,8 @@ autoload -Uz compinit && compinit -C
 
 # kimi-code
 export PATH="/Users/jigsaw/.kimi-code/bin:$PATH"
+
+# Rex: put the server's rex first on PATH (keep this at the end)
+if [ -n "$REX_BIN_DIR" ]; then
+    export PATH="$REX_BIN_DIR:$PATH"
+fi
