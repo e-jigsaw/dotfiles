@@ -64,9 +64,11 @@
     };
     taps = [
       "1password/tap"
+      "cemcatik/tap"
     ];
     brews = [
       "mise"
+      "cemcatik/tap/rexurrect"
     ];
     casks = [
       "1password-cli"
