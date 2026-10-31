@@ -210,6 +210,11 @@ autoload -Uz compinit && compinit -C
 # kimi-code
 export PATH="/Users/jigsaw/.kimi-code/bin:$PATH"
 
+# rexurrect: record each Rex block's last command
+if [ -f /opt/homebrew/share/rexurrect/rexurrect.plugin.zsh ]; then
+    source /opt/homebrew/share/rexurrect/rexurrect.plugin.zsh
+fi
+
 # Rex: put the server's rex first on PATH (keep this at the end)
 if [ -n "$REX_BIN_DIR" ]; then
     export PATH="$REX_BIN_DIR:$PATH"
