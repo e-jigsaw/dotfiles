@@ -18,15 +18,17 @@ stow -v -t ~ darwin
 # common 設定を適用
 stow -v -t --dotfiles ~ common
 
-# nix-darwin 設定を適用
-darwin-rebuild switch --flake ~/.config/nix-darwin
+# nix-darwin 設定を適用 (リポジトリ直下で)
+make switch
 
-# nix flake inputs の更新 (~/.config/nix-darwin 内で)
-nix flake update
+# nix flake inputs の更新 (リポジトリ直下で)
+make update
 
 # Nix ガベージコレクション
 nix-collect-garbage -d
 ```
+
+nix-darwin の switch は `darwin-rebuild switch` を直接叩かず `make switch` を使う。`LocalHostName` から flake の構成名 (`darwinConfigurations.<host>`) を選んで `sudo darwin-rebuild switch --flake ~/.config/nix-darwin#<host>` を実行してくれる。ホストを明示したい時は `make switch HOST=<name>`。sudo のパスワードが要るので、エージェントからは実行できない。ユーザに `! make switch` を打ってもらう。
 
 ## Architecture
 
