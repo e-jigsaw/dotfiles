@@ -67,6 +67,7 @@
       "cemcatik/tap"
     ];
     brews = [
+      "forgejo-cli"
       "mise"
       "cemcatik/tap/rexurrect"
     ];
