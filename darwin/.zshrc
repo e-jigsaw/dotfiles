@@ -185,8 +185,6 @@ eval "$(mise activate zsh)"
 
 eval "$(starship init zsh)"
 
-eval "$(zoxide init zsh)"
-
 # Go: go install の配置先
 export PATH="$HOME/go/bin:$PATH"
 
@@ -206,6 +204,9 @@ export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
 autoload -Uz compinit && compinit -C
 # <<< grok installer <<<
+
+# zoxide: compdef で z の補完を登録するので、最後の compinit より後に置く
+eval "$(zoxide init zsh)"
 
 # kimi-code
 export PATH="/Users/jigsaw/.kimi-code/bin:$PATH"
