@@ -196,6 +196,11 @@ tau() {
     command tau "$@"
 }
 
+# iris: optional shell settings managed in jigsaw-sandbox
+if [[ -f "$HOME/dev/jigsaw-sandbox/shell/iris.zsh" ]]; then
+  source "$HOME/dev/jigsaw-sandbox/shell/iris.zsh"
+fi
+
 # Added by Antigravity CLI installer
 export PATH="/Users/jigsaw/.local/bin:$PATH"
 
