@@ -11,6 +11,8 @@
     asciinema
     asciinema-agg
     ghq
+    # iPhone のシステムログを読む (idevicesyslog)
+    libimobiledevice
     nomad
     vhs
     yt-dlp
