@@ -23,6 +23,7 @@
     rustc
     cargo
     clippy
+    cmake
     stow
     tailscale
     tmux
