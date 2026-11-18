@@ -42,6 +42,7 @@
       modules = [
         ./modules/common.nix
         ./modules/neovim.nix
+        ./modules/forgejo-runner.nix
         ./hosts/JigsawMini.nix
       ];
       specialArgs = { inherit self; nvim = mkNvim "aarch64-darwin"; };
