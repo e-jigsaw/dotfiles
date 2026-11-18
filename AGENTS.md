@@ -42,6 +42,17 @@ nix-darwin の switch は `darwin-rebuild switch` を直接叩かず `make switc
 
 パッケージは Nix (`configuration.nix` の `environment.systemPackages`) と Homebrew Casks の両方で管理している。
 
+`JigsawMini` は セルフホストの Forgejo の Actions runner を常駐させている (`modules/forgejo-runner.nix`)。専用ユーザ `forgejo-runner` の launchd daemon で、label は `mini`。job は container 無しで mini の上で直接走る。
+
+runner の登録は手で 1 回行う。Forgejo の Settings → Actions → Runners で登録トークンを発行して、mini で実行する。label は `--labels` ではなく `/etc/forgejo-runner/config.yaml` の値が使われる。
+
+```bash
+sudo -u forgejo-runner env HOME=/var/lib/forgejo-runner \
+  /run/current-system/sw/bin/forgejo-runner register --no-interactive \
+  --config /etc/forgejo-runner/config.yaml \
+  --instance <Forgejo の URL> --name mini --token <登録トークン>
+```
+
 ### バージョン管理
 
 Git と jujutsu (jj) を並行して使用。`.gitconfig` で GPG 署名が強制されている (`commit.gpgsign = true`)。`init.defaultBranch` は `m` だが、このリポジトリのデフォルトブランチは `main`。
