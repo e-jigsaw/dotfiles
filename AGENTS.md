@@ -44,14 +44,24 @@ nix-darwin の switch は `darwin-rebuild switch` を直接叩かず `make switc
 
 `JigsawMini` は セルフホストの Forgejo の Actions runner を常駐させている (`modules/forgejo-runner.nix`)。専用ユーザ `forgejo-runner` の launchd daemon で、label は `mini`。job は container 無しで mini の上で直接走る。
 
-runner の登録は手で 1 回行う。Forgejo の Settings → Actions → Runners で登録トークンを発行して、mini で実行する。label は `--labels` ではなく `/etc/forgejo-runner/config.yaml` の値が使われる。
+Forgejo への接続情報 (URL、UUID、token) は repo に置かず、mini の `/var/lib/forgejo-runner/connection.yaml` に手で書く。daemon は起動時に `/etc/forgejo-runner/config.yaml` とこのファイルを繋げて設定にする。ファイルが無い間は起動せず待つ。
+
+Forgejo の Settings → Actions → Runners で runner を作ると UUID と token が出るので、mini で次を実行する。`forgejo-runner register` は deprecated で使わない。
 
 ```bash
-sudo -u forgejo-runner env HOME=/var/lib/forgejo-runner \
-  /run/current-system/sw/bin/forgejo-runner register --no-interactive \
-  --config /etc/forgejo-runner/config.yaml \
-  --instance <Forgejo の URL> --name mini --token <登録トークン>
+sudo -u forgejo-runner tee /var/lib/forgejo-runner/connection.yaml >/dev/null <<'YAML'
+server:
+  connections:
+    forgejo:
+      url: <Forgejo の URL>
+      uuid: <UUID>
+      token: <token>
+YAML
+sudo chmod 600 /var/lib/forgejo-runner/connection.yaml
+sudo launchctl kickstart -k system/org.nixos.forgejo-runner
 ```
+
+label は `/etc/forgejo-runner/config.yaml` の `runner.labels` が使われる。ログは `/var/lib/forgejo-runner/runner.log`。
 
 ### バージョン管理
 
