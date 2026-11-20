@@ -28,7 +28,6 @@ in
     log:
       level: info
     runner:
-      file: ${stateDir}/.runner
       capacity: 1
       labels:
         - "mini:host"
@@ -55,12 +54,14 @@ in
       "/bin"
     ];
     script = ''
-      if [ ! -f ${stateDir}/.runner ]; then
-        echo "not registered yet: ${stateDir}/.runner is missing"
+      if [ ! -f ${stateDir}/connection.yaml ]; then
+        echo "not connected yet: ${stateDir}/connection.yaml is missing"
         sleep 300
         exit 0
       fi
-      exec forgejo-runner daemon --config /etc/forgejo-runner/config.yaml
+      umask 077
+      cat /etc/forgejo-runner/config.yaml ${stateDir}/connection.yaml > ${stateDir}/config.yaml
+      exec forgejo-runner daemon --config ${stateDir}/config.yaml
     '';
     serviceConfig = {
       UserName = user;
